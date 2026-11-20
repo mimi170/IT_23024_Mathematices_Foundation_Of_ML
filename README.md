@@ -1,3 +1,5 @@
+Lecutre 2
+
 ## 1. Vectors
 
 A **vector** is a mathematical quantity that has both magnitude and direction. In linear algebra and machine learning, vectors are used to represent data points, features, and directions in space.
