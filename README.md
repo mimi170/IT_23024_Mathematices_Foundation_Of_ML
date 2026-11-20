@@ -2,27 +2,21 @@
 
 A **vector** is a mathematical quantity that has both magnitude and direction. In linear algebra and machine learning, vectors are used to represent data points, features, and directions in space.
 
-A vector can be written as:
+A vector can be represented as:
 
-$$
-\mathbf{v} =
-\begin{bmatrix}
-v_1 \\
-v_2 \\
-\vdots \\
-v_n
-\end{bmatrix}
-$$
+```text
+       ⎡ v₁ ⎤
+       ⎢ v₂ ⎥
+  v  = ⎢ ⋮  ⎥
+       ⎣ vₙ ⎦
+```
 
 Example:
 
-$$
-\mathbf{v} =
-\begin{bmatrix}
-2 \\
-3
-\end{bmatrix}
-$$
+```text
+     ⎡ 2 ⎤
+ v = ⎣ 3 ⎦
+```
 
 This is a two-dimensional vector with components 2 and 3.
 
@@ -36,13 +30,10 @@ A vector can be represented geometrically as an arrow.
 
 For a two-dimensional vector:
 
-$$
-\mathbf{v} =
-\begin{bmatrix}
-x \\
-y
-\end{bmatrix}
-$$
+```text
+     ⎡ x ⎤
+ v = ⎣ y ⎦
+```
 
 Here, x and y represent the horizontal and vertical components.
 
@@ -52,62 +43,31 @@ Vector addition means adding the corresponding components of two or more vectors
 
 Let:
 
-$$
-\mathbf{a} =
-\begin{bmatrix}
-a_1 \\
-a_2
-\end{bmatrix}
-\qquad
-\mathbf{b} =
-\begin{bmatrix}
-b_1 \\
-b_2
-\end{bmatrix}
-$$
+```text
+     ⎡ a₁ ⎤          ⎡ b₁ ⎤
+ a = ⎣ a₂ ⎦     b =  ⎣ b₂ ⎦
+```
 
 Their sum is:
 
-$$
-\mathbf{a} + \mathbf{b}
-=
-\begin{bmatrix}
-a_1 + b_1 \\
-a_2 + b_2
-\end{bmatrix}
-$$
+```text
+             ⎡ a₁ + b₁ ⎤
+ a + b   =   ⎣ a₂ + b₂ ⎦
+```
 
 **Example:**
 
-$$
-\mathbf{a} =
-\begin{bmatrix}
-2 \\
-3
-\end{bmatrix}
-\qquad
-\mathbf{b} =
-\begin{bmatrix}
-4 \\
-1
-\end{bmatrix}
-$$
+```text
+     ⎡ 2 ⎤          ⎡ 4 ⎤
+ a = ⎣ 3 ⎦     b =  ⎣ 1 ⎦
+```
 
 Therefore:
 
-$$
-\mathbf{a} + \mathbf{b}
-=
-\begin{bmatrix}
-2 + 4 \\
-3 + 1
-\end{bmatrix}
-=
-\begin{bmatrix}
-6 \\
-4
-\end{bmatrix}
-$$
+```text
+         ⎡ 2 + 4 ⎤       ⎡ 6 ⎤
+ a + b = ⎣ 3 + 1 ⎦   =   ⎣ 4 ⎦
+```
 
 ### 2.1 Geometric Interpretation
 
@@ -125,53 +85,31 @@ Scalar multiplication means multiplying every component of a vector by a scalar 
 
 Let:
 
-$$
-\mathbf{v} =
-\begin{bmatrix}
-v_1 \\
-v_2
-\end{bmatrix}
-$$
+```text
+     ⎡ v₁ ⎤
+ v = ⎣ v₂ ⎦
+```
 
 For a scalar c:
 
-$$
-c\mathbf{v}
-=
-\begin{bmatrix}
-cv_1 \\
-cv_2
-\end{bmatrix}
-$$
+```text
+          ⎡ cv₁ ⎤
+ c × v =  ⎣ cv₂ ⎦
+```
 
 **Example:**
 
-$$
-\mathbf{v} =
-\begin{bmatrix}
-2 \\
-3
-\end{bmatrix}
-\qquad
-c = 2
-$$
+```text
+     ⎡ 2 ⎤
+ v = ⎣ 3 ⎦       c = 2
+```
 
 Then:
 
-$$
-2\mathbf{v}
-=
-2
-\begin{bmatrix}
-2 \\
-3
-\end{bmatrix}
-=
-\begin{bmatrix}
-4 \\
-6
-\end{bmatrix}
-$$
+```text
+       ⎡ 2 ⎤       ⎡ 4 ⎤
+ 2v = 2⎣ 3 ⎦   =   ⎣ 6 ⎦
+```
 
 A positive scalar changes the magnitude while maintaining the direction. A negative scalar reverses the direction.
 
@@ -181,52 +119,31 @@ The magnitude or length of a vector is called its **norm**.
 
 For a two-dimensional vector:
 
-$$
-\mathbf{v} =
-\begin{bmatrix}
-x \\
-y
-\end{bmatrix}
-$$
+```text
+     ⎡ x ⎤
+ v = ⎣ y ⎦
+```
 
 Its Euclidean norm is:
 
-$$
-\|\mathbf{v}\| = \sqrt{x^2 + y^2}
-$$
+**‖v‖ = √(x² + y²)**
 
 For an n-dimensional vector:
 
-$$
-\|\mathbf{v}\|_2
-=
-\sqrt{\sum_{i=1}^{n} v_i^2}
-$$
+**‖v‖₂ = √(v₁² + v₂² + ... + vₙ²)**
 
 **Example:**
 
-$$
-\mathbf{v} =
-\begin{bmatrix}
-3 \\
-4
-\end{bmatrix}
-$$
+```text
+     ⎡ 3 ⎤
+ v = ⎣ 4 ⎦
+```
 
-$$
-\|\mathbf{v}\|
-=
-\sqrt{3^2 + 4^2}
-$$
+**‖v‖ = √(3² + 4²)**
 
-$$
-=
-\sqrt{9 + 16}
-=
-\sqrt{25}
-=
-5
-$$
+**‖v‖ = √(9 + 16)**
+
+**‖v‖ = √25 = 5**
 
 ## 5. Unit Vector
 
@@ -234,47 +151,31 @@ A unit vector is a vector whose magnitude is exactly 1.
 
 A unit vector in the direction of a non-zero vector v is calculated by dividing the vector by its magnitude.
 
-$$
-\hat{\mathbf{v}}
-=
-\frac{\mathbf{v}}{\|\mathbf{v}\|}
-$$
+**v̂ = v / ‖v‖**
 
 **Example:**
 
-$$
-\mathbf{v} =
-\begin{bmatrix}
-3 \\
-4
-\end{bmatrix}
-$$
+```text
+     ⎡ 3 ⎤
+ v = ⎣ 4 ⎦
+```
 
 Since:
 
-$$
-\|\mathbf{v}\| = 5
-$$
+**‖v‖ = 5**
 
 The unit vector is:
 
-$$
-\hat{\mathbf{v}}
-=
-\frac{1}{5}
-\begin{bmatrix}
-3 \\
-4
-\end{bmatrix}
-$$
+```text
+          1   ⎡ 3 ⎤
+ v̂ =     ─ × ⎣ 4 ⎦
+          5
+```
 
-$$
-=
-\begin{bmatrix}
-3/5 \\
-4/5
-\end{bmatrix}
-$$
+```text
+       ⎡ 3/5 ⎤
+ v̂ =  ⎣ 4/5 ⎦
+```
 
 Its magnitude is 1.
 
@@ -284,17 +185,7 @@ A linear combination is formed by multiplying vectors by scalars and then adding
 
 For vectors v₁, v₂, ..., vₙ, a linear combination is:
 
-$$
-\mathbf{v}
-=
-c_1\mathbf{v}_1
-+
-c_2\mathbf{v}_2
-+
-\cdots
-+
-c_n\mathbf{v}_n
-$$
+**v = c₁v₁ + c₂v₂ + ... + cₙvₙ**
 
 Where:
 
@@ -306,66 +197,29 @@ Where:
 
 Let:
 
-$$
-\mathbf{v}_1 =
-\begin{bmatrix}
-1 \\
-0
-\end{bmatrix}
-\qquad
-\mathbf{v}_2 =
-\begin{bmatrix}
-0 \\
-1
-\end{bmatrix}
-$$
+```text
+      ⎡ 1 ⎤          ⎡ 0 ⎤
+ v₁ = ⎣ 0 ⎦     v₂ = ⎣ 1 ⎦
+```
 
 Choose coefficients:
 
-$$
-c_1 = 3
-\qquad
-c_2 = 2
-$$
+**c₁ = 3, c₂ = 2**
 
 Then:
 
-$$
-3\mathbf{v}_1 + 2\mathbf{v}_2
-=
-3
-\begin{bmatrix}
-1 \\
-0
-\end{bmatrix}
-+
-2
-\begin{bmatrix}
-0 \\
-1
-\end{bmatrix}
-$$
+```text
+3v₁ + 2v₂
 
-$$
-=
-\begin{bmatrix}
-3 \\
-0
-\end{bmatrix}
-+
-\begin{bmatrix}
-0 \\
-2
-\end{bmatrix}
-$$
+       ⎡ 1 ⎤       ⎡ 0 ⎤
+= 3 ×  ⎣ 0 ⎦ + 2 × ⎣ 1 ⎦
 
-$$
-=
-\begin{bmatrix}
-3 \\
-2
-\end{bmatrix}
-$$
+       ⎡ 3 ⎤       ⎡ 0 ⎤
+=      ⎣ 0 ⎦  +    ⎣ 2 ⎦
+
+       ⎡ 3 ⎤
+=      ⎣ 2 ⎦
+```
 
 ## 7. Span of Vectors
 
@@ -373,15 +227,7 @@ The **span** of a set of vectors is the set of all possible linear combinations 
 
 For two vectors v₁ and v₂:
 
-$$
-\operatorname{Span}\{\mathbf{v}_1,\mathbf{v}_2\}
-=
-\left\{
-c_1\mathbf{v}_1 + c_2\mathbf{v}_2
-\mid
-c_1,c_2 \in \mathbb{R}
-\right\}
-$$
+**Span{v₁, v₂} = {c₁v₁ + c₂v₂ | c₁, c₂ ∈ ℝ}**
 
 The span describes all the vectors that can be generated using the given vectors and scalar coefficients.
 
@@ -389,48 +235,21 @@ The span describes all the vectors that can be generated using the given vectors
 
 Consider:
 
-$$
-\mathbf{v}_1 =
-\begin{bmatrix}
-1 \\
-0
-\end{bmatrix}
-\qquad
-\mathbf{v}_2 =
-\begin{bmatrix}
-0 \\
-1
-\end{bmatrix}
-$$
+```text
+      ⎡ 1 ⎤          ⎡ 0 ⎤
+ v₁ = ⎣ 0 ⎦     v₂ = ⎣ 1 ⎦
+```
 
 Any vector in two-dimensional space can be expressed as:
 
-$$
-\begin{bmatrix}
-x \\
-y
-\end{bmatrix}
-=
-x
-\begin{bmatrix}
-1 \\
-0
-\end{bmatrix}
-+
-y
-\begin{bmatrix}
-0 \\
-1
-\end{bmatrix}
-$$
+```text
+      ⎡ x ⎤       ⎡ 1 ⎤       ⎡ 0 ⎤
+      ⎣ y ⎦  = x ×⎣ 0 ⎦ + y ×⎣ 1 ⎦
+```
 
 Therefore, these two vectors span the entire two-dimensional plane:
 
-$$
-\operatorname{Span}\{\mathbf{v}_1,\mathbf{v}_2\}
-=
-\mathbb{R}^2
-$$
+**Span{v₁, v₂} = ℝ²**
 
 ## 8. Linear Independence
 
@@ -438,82 +257,36 @@ A set of vectors is **linearly independent** if no vector in the set can be expr
 
 Mathematically, vectors v₁, v₂, ..., vₙ are linearly independent if:
 
-$$
-c_1\mathbf{v}_1
-+
-c_2\mathbf{v}_2
-+
-\cdots
-+
-c_n\mathbf{v}_n
-=
-\mathbf{0}
-$$
+**c₁v₁ + c₂v₂ + ... + cₙvₙ = 0**
 
 has only the trivial solution:
 
-$$
-c_1 = c_2 = \cdots = c_n = 0
-$$
+**c₁ = c₂ = ... = cₙ = 0**
 
 **Example:**
 
-$$
-\mathbf{v}_1 =
-\begin{bmatrix}
-1 \\
-0
-\end{bmatrix}
-\qquad
-\mathbf{v}_2 =
-\begin{bmatrix}
-0 \\
-1
-\end{bmatrix}
-$$
+```text
+      ⎡ 1 ⎤          ⎡ 0 ⎤
+ v₁ = ⎣ 0 ⎦     v₂ = ⎣ 1 ⎦
+```
 
 If:
 
-$$
-c_1
-\begin{bmatrix}
-1 \\
-0
-\end{bmatrix}
-+
-c_2
-\begin{bmatrix}
-0 \\
-1
-\end{bmatrix}
-=
-\begin{bmatrix}
-0 \\
-0
-\end{bmatrix}
-$$
+```text
+       ⎡ 1 ⎤       ⎡ 0 ⎤       ⎡ 0 ⎤
+ c₁ ×  ⎣ 0 ⎦ + c₂ ×⎣ 1 ⎦  =   ⎣ 0 ⎦
+```
 
 Then:
 
-$$
-\begin{bmatrix}
-c_1 \\
-c_2
-\end{bmatrix}
-=
-\begin{bmatrix}
-0 \\
-0
-\end{bmatrix}
-$$
+```text
+     ⎡ c₁ ⎤       ⎡ 0 ⎤
+     ⎣ c₂ ⎦   =   ⎣ 0 ⎦
+```
 
 Thus:
 
-$$
-c_1 = 0
-\qquad
-c_2 = 0
-$$
+**c₁ = 0 and c₂ = 0**
 
 The vectors are linearly independent.
 
@@ -523,41 +296,20 @@ A set of vectors is **linearly dependent** if at least one vector can be express
 
 The equation:
 
-$$
-c_1\mathbf{v}_1
-+
-c_2\mathbf{v}_2
-+
-\cdots
-+
-c_n\mathbf{v}_n
-=
-\mathbf{0}
-$$
+**c₁v₁ + c₂v₂ + ... + cₙvₙ = 0**
 
 has at least one non-zero coefficient in a solution.
 
 **Example:**
 
-$$
-\mathbf{v}_1 =
-\begin{bmatrix}
-1 \\
-2
-\end{bmatrix}
-\qquad
-\mathbf{v}_2 =
-\begin{bmatrix}
-2 \\
-4
-\end{bmatrix}
-$$
+```text
+      ⎡ 1 ⎤          ⎡ 2 ⎤
+ v₁ = ⎣ 2 ⎦     v₂ = ⎣ 4 ⎦
+```
 
 Notice that:
 
-$$
-\mathbf{v}_2 = 2\mathbf{v}_1
-$$
+**v₂ = 2v₁**
 
 Therefore, the second vector is a scalar multiple of the first vector. These vectors are linearly dependent.
 
@@ -568,61 +320,32 @@ A **basis** is a set of vectors that satisfies two conditions:
 1. The vectors are linearly independent.
 2. The vectors span the entire vector space.
 
-For example, the standard basis of R² is:
+For example, the standard basis of ℝ² is:
 
-$$
-\mathbf{e}_1 =
-\begin{bmatrix}
-1 \\
-0
-\end{bmatrix}
-\qquad
-\mathbf{e}_2 =
-\begin{bmatrix}
-0 \\
-1
-\end{bmatrix}
-$$
+```text
+      ⎡ 1 ⎤          ⎡ 0 ⎤
+ e₁ = ⎣ 0 ⎦     e₂ = ⎣ 1 ⎦
+```
 
-Every vector in R² can be represented using these two basis vectors:
+Every vector in ℝ² can be represented using these two basis vectors:
 
-$$
-\begin{bmatrix}
-x \\
-y
-\end{bmatrix}
-=
-x\mathbf{e}_1 + y\mathbf{e}_2
-$$
+**[x, y]ᵀ = x e₁ + y e₂**
 
-The standard basis of R³ is:
+The standard basis of ℝ³ is:
 
-$$
-\mathbf{e}_1 =
-\begin{bmatrix}
-1 \\
-0 \\
-0
-\end{bmatrix}
-$$
+```text
+      ⎡ 1 ⎤
+ e₁ = ⎢ 0 ⎥
+      ⎣ 0 ⎦
 
-$$
-\mathbf{e}_2 =
-\begin{bmatrix}
-0 \\
-1 \\
-0
-\end{bmatrix}
-$$
+      ⎡ 0 ⎤
+ e₂ = ⎢ 1 ⎥
+      ⎣ 0 ⎦
 
-$$
-\mathbf{e}_3 =
-\begin{bmatrix}
-0 \\
-0 \\
-1
-\end{bmatrix}
-$$
+      ⎡ 0 ⎤
+ e₃ = ⎢ 0 ⎥
+      ⎣ 1 ⎦
+```
 
 ## 11. Dimension of a Vector Space
 
@@ -630,17 +353,11 @@ The dimension of a vector space is the number of vectors in any basis of that sp
 
 Examples:
 
-$$
-\dim(\mathbb{R}^2) = 2
-$$
+**dim(ℝ²) = 2**
 
-$$
-\dim(\mathbb{R}^3) = 3
-$$
+**dim(ℝ³) = 3**
 
-$$
-\dim(\mathbb{R}^n) = n
-$$
+**dim(ℝⁿ) = n**
 
 A two-dimensional vector space requires two linearly independent basis vectors. A three-dimensional vector space requires three linearly independent basis vectors.
 
@@ -652,27 +369,15 @@ Let T be a transformation. It is linear if it satisfies the following two proper
 
 ### 12.1 Preservation of Vector Addition
 
-$$
-T(\mathbf{u}+\mathbf{v})
-=
-T(\mathbf{u})+T(\mathbf{v})
-$$
+**T(u + v) = T(u) + T(v)**
 
 ### 12.2 Preservation of Scalar Multiplication
 
-$$
-T(c\mathbf{v})
-=
-cT(\mathbf{v})
-$$
+**T(cv) = cT(v)**
 
 Combining these properties:
 
-$$
-T(a\mathbf{u}+b\mathbf{v})
-=
-aT(\mathbf{u})+bT(\mathbf{v})
-$$
+**T(au + bv) = aT(u) + bT(v)**
 
 Here, a and b are scalars.
 
@@ -680,9 +385,7 @@ Here, a and b are scalars.
 
 A linear transformation can be represented using a matrix.
 
-$$
-T(\mathbf{x}) = A\mathbf{x}
-$$
+**T(x) = Ax**
 
 Where:
 
@@ -694,53 +397,25 @@ Where:
 
 Let:
 
-$$
-A =
-\begin{bmatrix}
-2 & 0 \\
-0 & 3
-\end{bmatrix}
-\qquad
-\mathbf{x} =
-\begin{bmatrix}
-1 \\
-2
-\end{bmatrix}
-$$
+```text
+      ⎡ 2  0 ⎤          ⎡ 1 ⎤
+ A =  ⎣ 0  3 ⎦     x =  ⎣ 2 ⎦
+```
 
 Then:
 
-$$
-T(\mathbf{x}) = A\mathbf{x}
-$$
+**T(x) = Ax**
 
-$$
-=
-\begin{bmatrix}
-2 & 0 \\
-0 & 3
-\end{bmatrix}
-\begin{bmatrix}
-1 \\
-2
-\end{bmatrix}
-$$
+```text
+       ⎡ 2  0 ⎤   ⎡ 1 ⎤
+     = ⎣ 0  3 ⎦ × ⎣ 2 ⎦
 
-$$
-=
-\begin{bmatrix}
-2(1)+0(2) \\
-0(1)+3(2)
-\end{bmatrix}
-$$
+       ⎡ 2(1) + 0(2) ⎤
+     = ⎣ 0(1) + 3(2) ⎦
 
-$$
-=
-\begin{bmatrix}
-2 \\
-6
-\end{bmatrix}
-$$
+       ⎡ 2 ⎤
+     = ⎣ 6 ⎦
+```
 
 The transformation scales the first coordinate by 2 and the second coordinate by 3.
 
@@ -748,45 +423,33 @@ The transformation scales the first coordinate by 2 and the second coordinate by
 
 **Scaling:** Changes the size of a vector.
 
-$$
-A =
-\begin{bmatrix}
-a & 0 \\
-0 & b
-\end{bmatrix}
-$$
+```text
+      ⎡ a  0 ⎤
+ A =  ⎣ 0  b ⎦
+```
 
 **Rotation:** Rotates a vector by an angle θ.
 
-$$
-R(\theta) =
-\begin{bmatrix}
-\cos\theta & -\sin\theta \\
-\sin\theta & \cos\theta
-\end{bmatrix}
-$$
+```text
+       ⎡ cos θ   -sin θ ⎤
+ R(θ)= ⎣ sin θ    cos θ ⎦
+```
 
 **Reflection:** Reflects a vector across an axis. Reflection across the x-axis is represented by:
 
-$$
-A =
-\begin{bmatrix}
-1 & 0 \\
-0 & -1
-\end{bmatrix}
-$$
+```text
+      ⎡ 1   0 ⎤
+ A =  ⎣ 0  -1 ⎦
+```
 
 **Projection:** Maps a vector onto a specified line or subspace.
 
 For projection onto the x-axis:
 
-$$
-P =
-\begin{bmatrix}
-1 & 0 \\
-0 & 0
-\end{bmatrix}
-$$
+```text
+      ⎡ 1  0 ⎤
+ P =  ⎣ 0  0 ⎦
+```
 
 ## 13. Vectors and Linear Transformations in Machine Learning
 
