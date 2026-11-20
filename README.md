@@ -1,4 +1,5 @@
-###### Lecutre 2
+Linear Combination, Span and Basis
+Lecture 2 – Linear Algebra
 
 ## 1. Vectors
 
