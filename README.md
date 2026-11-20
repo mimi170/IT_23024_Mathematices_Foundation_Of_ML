@@ -1,25 +1,25 @@
 ## 1. Vectors
 
-A **vector** is a mathematical quantity that has both magnitude and direction. In machine learning and linear algebra, vectors are used to represent data points, features, and directions in space.
+A **vector** is a mathematical quantity that has both magnitude and direction. In linear algebra and machine learning, vectors are used to represent data points, features, and directions in space.
 
 A vector can be written as:
 
 $$
 \mathbf{v} =
 \begin{bmatrix}
-v_1\\
-v_2\\
-\vdots\\
+v_1 \\
+v_2 \\
+\vdots \\
 v_n
 \end{bmatrix}
 $$
 
-For example:
+Example:
 
 $$
 \mathbf{v} =
 \begin{bmatrix}
-2\\
+2 \\
 3
 \end{bmatrix}
 $$
@@ -39,29 +39,29 @@ For a two-dimensional vector:
 $$
 \mathbf{v} =
 \begin{bmatrix}
-x\\
+x \\
 y
 \end{bmatrix}
 $$
 
-Here, \(x\) and \(y\) represent the horizontal and vertical components.
+Here, x and y represent the horizontal and vertical components.
 
 ## 2. Vector Addition
 
 Vector addition means adding the corresponding components of two or more vectors.
 
-Let,
+Let:
 
 $$
 \mathbf{a} =
 \begin{bmatrix}
-a_1\\
+a_1 \\
 a_2
-\end{bmatrix},
+\end{bmatrix}
 \qquad
 \mathbf{b} =
 \begin{bmatrix}
-b_1\\
+b_1 \\
 b_2
 \end{bmatrix}
 $$
@@ -69,11 +69,11 @@ $$
 Their sum is:
 
 $$
-\mathbf{a}+\mathbf{b}
+\mathbf{a} + \mathbf{b}
 =
 \begin{bmatrix}
-a_1+b_1\\
-a_2+b_2
+a_1 + b_1 \\
+a_2 + b_2
 \end{bmatrix}
 $$
 
@@ -82,29 +82,29 @@ $$
 $$
 \mathbf{a} =
 \begin{bmatrix}
-2\\
+2 \\
 3
-\end{bmatrix},
+\end{bmatrix}
 \qquad
 \mathbf{b} =
 \begin{bmatrix}
-4\\
+4 \\
 1
 \end{bmatrix}
 $$
 
-Therefore,
+Therefore:
 
 $$
-\mathbf{a}+\mathbf{b}
+\mathbf{a} + \mathbf{b}
 =
 \begin{bmatrix}
-2+4\\
-3+1
+2 + 4 \\
+3 + 1
 \end{bmatrix}
 =
 \begin{bmatrix}
-6\\
+6 \\
 4
 \end{bmatrix}
 $$
@@ -123,23 +123,23 @@ The resulting vector represents the sum.
 
 Scalar multiplication means multiplying every component of a vector by a scalar (a real number).
 
-Let,
+Let:
 
 $$
 \mathbf{v} =
 \begin{bmatrix}
-v_1\\
+v_1 \\
 v_2
 \end{bmatrix}
 $$
 
-For a scalar \(c\):
+For a scalar c:
 
 $$
 c\mathbf{v}
 =
 \begin{bmatrix}
-cv_1\\
+cv_1 \\
 cv_2
 \end{bmatrix}
 $$
@@ -149,25 +149,26 @@ $$
 $$
 \mathbf{v} =
 \begin{bmatrix}
-2\\
+2 \\
 3
-\end{bmatrix},
-\qquad c=2
+\end{bmatrix}
+\qquad
+c = 2
 $$
 
-Then,
+Then:
 
 $$
 2\mathbf{v}
 =
 2
 \begin{bmatrix}
-2\\
+2 \\
 3
 \end{bmatrix}
 =
 \begin{bmatrix}
-4\\
+4 \\
 6
 \end{bmatrix}
 $$
@@ -183,7 +184,7 @@ For a two-dimensional vector:
 $$
 \mathbf{v} =
 \begin{bmatrix}
-x\\
+x \\
 y
 \end{bmatrix}
 $$
@@ -191,14 +192,15 @@ $$
 Its Euclidean norm is:
 
 $$
-\|\mathbf{v}\| = \sqrt{x^2+y^2}
+\|\mathbf{v}\| = \sqrt{x^2 + y^2}
 $$
 
-For an \(n\)-dimensional vector:
+For an n-dimensional vector:
 
 $$
-\|\mathbf{v}\|_2 =
-\sqrt{\sum_{i=1}^{n}v_i^2}
+\|\mathbf{v}\|_2
+=
+\sqrt{\sum_{i=1}^{n} v_i^2}
 $$
 
 **Example:**
@@ -206,7 +208,7 @@ $$
 $$
 \mathbf{v} =
 \begin{bmatrix}
-3\\
+3 \\
 4
 \end{bmatrix}
 $$
@@ -214,9 +216,14 @@ $$
 $$
 \|\mathbf{v}\|
 =
-\sqrt{3^2+4^2}
+\sqrt{3^2 + 4^2}
+$$
+
+$$
 =
-\sqrt{9+16}
+\sqrt{9 + 16}
+=
+\sqrt{25}
 =
 5
 $$
@@ -225,10 +232,11 @@ $$
 
 A unit vector is a vector whose magnitude is exactly 1.
 
-A unit vector in the direction of a non-zero vector \(\mathbf{v}\) is calculated by dividing the vector by its magnitude.
+A unit vector in the direction of a non-zero vector v is calculated by dividing the vector by its magnitude.
 
 $$
-\hat{\mathbf{v}} =
+\hat{\mathbf{v}}
+=
 \frac{\mathbf{v}}{\|\mathbf{v}\|}
 $$
 
@@ -237,15 +245,15 @@ $$
 $$
 \mathbf{v} =
 \begin{bmatrix}
-3\\
+3 \\
 4
 \end{bmatrix}
 $$
 
-Since,
+Since:
 
 $$
-\|\mathbf{v}\|=5
+\|\mathbf{v}\| = 5
 $$
 
 The unit vector is:
@@ -255,12 +263,15 @@ $$
 =
 \frac{1}{5}
 \begin{bmatrix}
-3\\
+3 \\
 4
 \end{bmatrix}
+$$
+
+$$
 =
 \begin{bmatrix}
-3/5\\
+3/5 \\
 4/5
 \end{bmatrix}
 $$
@@ -271,57 +282,66 @@ Its magnitude is 1.
 
 A linear combination is formed by multiplying vectors by scalars and then adding the results.
 
-For vectors \(\mathbf{v}_1,\mathbf{v}_2,\ldots,\mathbf{v}_n\), a linear combination is:
+For vectors v₁, v₂, ..., vₙ, a linear combination is:
 
 $$
 \mathbf{v}
 =
-c_1\mathbf{v}_1+
-c_2\mathbf{v}_2+
-\cdots+
+c_1\mathbf{v}_1
++
+c_2\mathbf{v}_2
++
+\cdots
++
 c_n\mathbf{v}_n
 $$
 
-Here:
+Where:
 
-- \(\mathbf{v}_1,\mathbf{v}_2,\ldots,\mathbf{v}_n\) are vectors.
-- \(c_1,c_2,\ldots,c_n\) are scalar coefficients.
-- \(\mathbf{v}\) is the resulting vector.
+- v₁, v₂, ..., vₙ are vectors.
+- c₁, c₂, ..., cₙ are scalar coefficients.
+- v is the resulting vector.
 
 **Example:**
 
-Let,
+Let:
 
 $$
 \mathbf{v}_1 =
 \begin{bmatrix}
-1\\
+1 \\
 0
-\end{bmatrix},
+\end{bmatrix}
 \qquad
 \mathbf{v}_2 =
 \begin{bmatrix}
-0\\
+0 \\
 1
 \end{bmatrix}
 $$
 
-Choose coefficients \(c_1=3\) and \(c_2=2\).
-
-Then,
+Choose coefficients:
 
 $$
-3\mathbf{v}_1+2\mathbf{v}_2
+c_1 = 3
+\qquad
+c_2 = 2
+$$
+
+Then:
+
+$$
+3\mathbf{v}_1 + 2\mathbf{v}_2
 =
 3
 \begin{bmatrix}
-1\\
+1 \\
 0
 \end{bmatrix}
 +
 2
 \begin{bmatrix}
-0\\
+0 \\
 1
 \end{bmatrix}
 $$
@@ -329,17 +349,20 @@ $$
 $$
 =
 \begin{bmatrix}
-3\\
+3 \\
 0
 \end{bmatrix}
 +
 \begin{bmatrix}
-0\\
+0 \\
 2
 \end{bmatrix}
+$$
+
+$$
 =
 \begin{bmatrix}
-3\\
+3 \\
 2
 \end{bmatrix}
 $$
@@ -348,16 +371,16 @@ $$
 
 The **span** of a set of vectors is the set of all possible linear combinations of those vectors.
 
-For two vectors \(\mathbf{v}_1\) and \(\mathbf{v}_2\):
+For two vectors v₁ and v₂:
 
 $$
-\operatorname{Span}
-\{\mathbf{v}_1,\mathbf{v}_2\}
+\operatorname{Span}\{\mathbf{v}_1,\mathbf{v}_2\}
 =
-\{
-c_1\mathbf{v}_1+c_2\mathbf{v}_2
-\mid c_1,c_2\in\mathbb{R}
-\}
+\left\{
+c_1\mathbf{v}_1 + c_2\mathbf{v}_2
+\mid
+c_1,c_2 \in \mathbb{R}
+\right\}
 $$
 
 The span describes all the vectors that can be generated using the given vectors and scalar coefficients.
@@ -369,13 +392,13 @@ Consider:
 $$
 \mathbf{v}_1 =
 \begin{bmatrix}
-1\\
+1 \\
 0
-\end{bmatrix},
+\end{bmatrix}
 \qquad
 \mathbf{v}_2 =
 \begin{bmatrix}
-0\\
+0 \\
 1
 \end{bmatrix}
 $$
@@ -384,19 +407,19 @@ Any vector in two-dimensional space can be expressed as:
 
 $$
 \begin{bmatrix}
-x\\
+x \\
 y
 \end{bmatrix}
 =
 x
 \begin{bmatrix}
-1\\
+1 \\
 0
 \end{bmatrix}
 +
 y
 \begin{bmatrix}
-0\\
+0 \\
 1
 \end{bmatrix}
 $$
@@ -413,12 +436,15 @@ $$
 
 A set of vectors is **linearly independent** if no vector in the set can be expressed as a linear combination of the other vectors.
 
-Mathematically, vectors \(\mathbf{v}_1,\mathbf{v}_2,\ldots,\mathbf{v}_n\) are linearly independent if:
+Mathematically, vectors v₁, v₂, ..., vₙ are linearly independent if:
 
 $$
-c_1\mathbf{v}_1+
-c_2\mathbf{v}_2+
-\cdots+
+c_1\mathbf{v}_1
++
+c_2\mathbf{v}_2
++
+\cdots
++
 c_n\mathbf{v}_n
 =
 \mathbf{0}
@@ -427,7 +453,7 @@ $$
 has only the trivial solution:
 
 $$
-c_1=c_2=\cdots=c_n=0
+c_1 = c_2 = \cdots = c_n = 0
 $$
 
 **Example:**
@@ -435,64 +461,75 @@ $$
 $$
 \mathbf{v}_1 =
 \begin{bmatrix}
-1\\
+1 \\
 0
-\end{bmatrix},
+\end{bmatrix}
 \qquad
 \mathbf{v}_2 =
 \begin{bmatrix}
-0\\
+0 \\
 1
 \end{bmatrix}
 $$
 
-If,
+If:
 
 $$
 c_1
 \begin{bmatrix}
-1\\
+1 \\
 0
 \end{bmatrix}
 +
 c_2
 \begin{bmatrix}
-0\\
+0 \\
 1
 \end{bmatrix}
 =
 \begin{bmatrix}
-0\\
+0 \\
 0
 \end{bmatrix}
 $$
 
-Then,
+Then:
 
 $$
 \begin{bmatrix}
-c_1\\
+c_1 \\
 c_2
 \end{bmatrix}
 =
 \begin{bmatrix}
-0\\
+0 \\
 0
 \end{bmatrix}
 $$
 
-Thus, \(c_1=0\) and \(c_2=0\). The vectors are linearly independent.
+Thus:
+
+$$
+c_1 = 0
+\qquad
+c_2 = 0
+$$
+
+The vectors are linearly independent.
 
 ## 9. Linear Dependence
 
 A set of vectors is **linearly dependent** if at least one vector can be expressed as a linear combination of the other vectors.
 
-The equation,
+The equation:
 
 $$
-c_1\mathbf{v}_1+
-c_2\mathbf{v}_2+
-\cdots+
+c_1\mathbf{v}_1
++
+c_2\mathbf{v}_2
++
+\cdots
++
 c_n\mathbf{v}_n
 =
 \mathbf{0}
@@ -505,13 +542,13 @@ has at least one non-zero coefficient in a solution.
 $$
 \mathbf{v}_1 =
 \begin{bmatrix}
-1\\
+1 \\
 2
-\end{bmatrix},
+\end{bmatrix}
 \qquad
 \mathbf{v}_2 =
 \begin{bmatrix}
-2\\
+2 \\
 4
 \end{bmatrix}
 $$
@@ -519,7 +556,7 @@ $$
 Notice that:
 
 $$
-\mathbf{v}_2=2\mathbf{v}_1
+\mathbf{v}_2 = 2\mathbf{v}_1
 $$
 
 Therefore, the second vector is a scalar multiple of the first vector. These vectors are linearly dependent.
@@ -531,54 +568,58 @@ A **basis** is a set of vectors that satisfies two conditions:
 1. The vectors are linearly independent.
 2. The vectors span the entire vector space.
 
-For example, the standard basis of \(\mathbb{R}^2\) is:
+For example, the standard basis of R² is:
 
 $$
 \mathbf{e}_1 =
 \begin{bmatrix}
-1\\
+1 \\
 0
-\end{bmatrix},
+\end{bmatrix}
 \qquad
 \mathbf{e}_2 =
 \begin{bmatrix}
-0\\
+0 \\
 1
 \end{bmatrix}
 $$
 
-Every vector in \(\mathbb{R}^2\) can be represented using these two basis vectors:
+Every vector in R² can be represented using these two basis vectors:
 
 $$
 \begin{bmatrix}
-x\\
+x \\
 y
 \end{bmatrix}
 =
-x\mathbf{e}_1+y\mathbf{e}_2
+x\mathbf{e}_1 + y\mathbf{e}_2
 $$
 
-The standard basis of \(\mathbb{R}^3\) is:
+The standard basis of R³ is:
 
 $$
 \mathbf{e}_1 =
 \begin{bmatrix}
-1\\
-0\\
+1 \\
+0 \\
 0
-\end{bmatrix},
-\quad
+\end{bmatrix}
+$$
+
+$$
 \mathbf{e}_2 =
 \begin{bmatrix}
-0\\
-1\\
+0 \\
+1 \\
 0
-\end{bmatrix},
-\quad
+\end{bmatrix}
+$$
+
+$$
 \mathbf{e}_3 =
 \begin{bmatrix}
-0\\
-0\\
+0 \\
+0 \\
 1
 \end{bmatrix}
 $$
@@ -590,15 +631,15 @@ The dimension of a vector space is the number of vectors in any basis of that sp
 Examples:
 
 $$
-\dim(\mathbb{R}^2)=2
+\dim(\mathbb{R}^2) = 2
 $$
 
 $$
-\dim(\mathbb{R}^3)=3
+\dim(\mathbb{R}^3) = 3
 $$
 
 $$
-\dim(\mathbb{R}^n)=n
+\dim(\mathbb{R}^n) = n
 $$
 
 A two-dimensional vector space requires two linearly independent basis vectors. A three-dimensional vector space requires three linearly independent basis vectors.
@@ -607,7 +648,7 @@ A two-dimensional vector space requires two linearly independent basis vectors. 
 
 A **linear transformation** is a function that maps vectors from one vector space to another while preserving vector addition and scalar multiplication.
 
-Let \(T\) be a transformation. It is linear if it satisfies the following two properties.
+Let T be a transformation. It is linear if it satisfies the following two properties.
 
 ### 12.1 Preservation of Vector Addition
 
@@ -633,54 +674,54 @@ T(a\mathbf{u}+b\mathbf{v})
 aT(\mathbf{u})+bT(\mathbf{v})
 $$
 
-Here, \(a\) and \(b\) are scalars.
+Here, a and b are scalars.
 
 ### 12.3 Matrix Representation
 
 A linear transformation can be represented using a matrix.
 
 $$
-T(\mathbf{x})=A\mathbf{x}
+T(\mathbf{x}) = A\mathbf{x}
 $$
 
 Where:
 
-- \(A\) is the transformation matrix.
-- \(\mathbf{x}\) is the input vector.
-- \(T(\mathbf{x})\) is the transformed vector.
+- A is the transformation matrix.
+- x is the input vector.
+- T(x) is the transformed vector.
 
 **Example:**
 
-Let,
+Let:
 
 $$
-A=
+A =
 \begin{bmatrix}
-2&0\\
-0&3
-\end{bmatrix},
+2 & 0 \\
+0 & 3
+\end{bmatrix}
 \qquad
-\mathbf{x}=
+\mathbf{x} =
 \begin{bmatrix}
-1\\
+1 \\
 2
 \end{bmatrix}
 $$
 
-Then,
+Then:
 
 $$
-T(\mathbf{x})=A\mathbf{x}
+T(\mathbf{x}) = A\mathbf{x}
 $$
 
 $$
 =
 \begin{bmatrix}
-2&0\\
-0&3
+2 & 0 \\
+0 & 3
 \end{bmatrix}
 \begin{bmatrix}
-1\\
+1 \\
 2
 \end{bmatrix}
 $$
@@ -688,12 +729,15 @@ $$
 $$
 =
 \begin{bmatrix}
-2(1)+0(2)\\
+2(1)+0(2) \\
 0(1)+3(2)
 \end{bmatrix}
+$$
+
+$$
 =
 \begin{bmatrix}
-2\\
+2 \\
 6
 \end{bmatrix}
 $$
@@ -705,42 +749,42 @@ The transformation scales the first coordinate by 2 and the second coordinate by
 **Scaling:** Changes the size of a vector.
 
 $$
-A=
+A =
 \begin{bmatrix}
-a&0\\
-0&b
+a & 0 \\
+0 & b
 \end{bmatrix}
 $$
 
-**Rotation:** Rotates a vector by an angle \(\theta\).
+**Rotation:** Rotates a vector by an angle θ.
 
 $$
-R(\theta)=
+R(\theta) =
 \begin{bmatrix}
-\cos\theta&-\sin\theta\\
-\sin\theta&\cos\theta
+\cos\theta & -\sin\theta \\
+\sin\theta & \cos\theta
 \end{bmatrix}
 $$
 
-**Reflection:** Reflects a vector across an axis. Reflection across the \(x\)-axis is represented by:
+**Reflection:** Reflects a vector across an axis. Reflection across the x-axis is represented by:
 
 $$
-A=
+A =
 \begin{bmatrix}
-1&0\\
-0&-1
+1 & 0 \\
+0 & -1
 \end{bmatrix}
 $$
 
 **Projection:** Maps a vector onto a specified line or subspace.
 
-For projection onto the \(x\)-axis:
+For projection onto the x-axis:
 
 $$
-P=
+P =
 \begin{bmatrix}
-1&0\\
-0&0
+1 & 0 \\
+0 & 0
 \end{bmatrix}
 $$
 
