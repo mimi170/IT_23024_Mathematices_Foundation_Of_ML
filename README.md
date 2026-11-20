@@ -453,13 +453,439 @@ For projection onto the x-axis:
  P =  ⎣ 0  0 ⎦
 ```
 
-## 13. Vectors and Linear Transformations in Machine Learning
+Lecture 3
+## 1. Linear Transformation
 
-Vectors and linear transformations are important mathematical foundations of machine learning.
+A **linear transformation** is a function that maps vectors from one vector space to another while preserving vector addition and scalar multiplication.
 
-- **Data representation:** A data sample can be represented as a vector of numerical features.
-- **Feature vectors:** Each feature represents one property of a data sample.
-- **Weight vectors:** Machine learning models use weights to determine the importance of features.
-- **Linear combinations:** Model predictions can be calculated by combining input features with their corresponding weights.
-- **Matrix operations:** Matrices and vectors are used to perform transformations efficiently.
-- **Dimensionality:** Vector spaces provide a mathematical foundation for representing and processing data with different numbers of features.
+A transformation T is linear if it satisfies two important properties.
+
+### 1.1 Additivity
+
+The transformation of the sum of two vectors must be equal to the sum of their individual transformations.
+
+**T(u + v) = T(u) + T(v)**
+
+### 1.2 Homogeneity
+
+The transformation of a scalar multiplied by a vector must be equal to the scalar multiplied by the transformed vector.
+
+**T(cv) = cT(v)**
+
+Here:
+- T represents a linear transformation.
+- u and v represent vectors.
+- c represents a scalar.
+
+Both properties can be combined into:
+
+**T(au + bv) = aT(u) + bT(v)**
+
+## 2. Matrix Representation of Linear Transformation
+
+A linear transformation can be represented using matrix multiplication.
+
+The general form is:
+
+**T(x) = Ax**
+
+Where:
+
+- T(x) = transformed vector
+- A = transformation matrix
+- x = input vector
+
+For a two-dimensional vector:
+
+```text
+       ⎡ a  b ⎤   ⎡ x ⎤
+T(x) = ⎣ c  d ⎦ × ⎣ y ⎦
+```
+
+After matrix multiplication:
+
+```text
+       ⎡ ax + by ⎤
+T(x) = ⎣ cx + dy ⎦
+```
+
+Therefore, a matrix transforms an input vector into a new output vector.
+
+## 3. Matrix Multiplication
+
+Matrix multiplication is the mathematical operation used to apply a linear transformation.
+
+Let:
+
+```text
+       ⎡ 2  1 ⎤
+ A  =  ⎣ 1  3 ⎦
+
+       ⎡ 4 ⎤
+ x  =  ⎣ 2 ⎦
+```
+
+Then:
+
+**T(x) = Ax**
+
+```text
+       ⎡ 2  1 ⎤   ⎡ 4 ⎤
+     = ⎣ 1  3 ⎦ × ⎣ 2 ⎦
+```
+
+Multiplying each row by the input vector:
+
+```text
+       ⎡ (2 × 4) + (1 × 2) ⎤
+     = ⎣ (1 × 4) + (3 × 2) ⎦
+```
+
+Therefore:
+
+```text
+       ⎡ 10 ⎤
+T(x) = ⎣ 10 ⎦
+```
+
+The input vector [4, 2]ᵀ is transformed into [10, 10]ᵀ.
+
+## 4. Transformation of Standard Basis Vectors
+
+The standard basis vectors in two-dimensional space are:
+
+```text
+       ⎡ 1 ⎤
+e₁  =  ⎣ 0 ⎦
+
+       ⎡ 0 ⎤
+e₂  =  ⎣ 1 ⎦
+```
+
+Every two-dimensional vector can be expressed as a linear combination of these basis vectors.
+
+For a vector:
+
+```text
+       ⎡ x ⎤
+v   =  ⎣ y ⎦
+```
+
+We can write:
+
+**v = xe₁ + ye₂**
+
+Applying a linear transformation:
+
+**T(v) = T(xe₁ + ye₂)**
+
+Using the properties of linear transformation:
+
+**T(v) = xT(e₁) + yT(e₂)**
+
+This means that the transformation of any vector can be determined from the transformations of the standard basis vectors.
+
+## 5. Constructing a Transformation Matrix
+
+A transformation matrix can be constructed by placing the transformed standard basis vectors as its columns.
+
+For a two-dimensional transformation:
+
+```text
+          ⎡ |      | ⎤
+      A = ⎢ T(e₁) T(e₂) ⎥
+          ⎣ |      | ⎦
+```
+
+More clearly:
+
+```text
+       ⎡ T(e₁)ₓ   T(e₂)ₓ ⎤
+A  =   ⎣ T(e₁)ᵧ   T(e₂)ᵧ ⎦
+```
+
+Where:
+
+- First column represents T(e₁).
+- Second column represents T(e₂).
+
+### Example
+
+Suppose a transformation maps the standard basis vectors as follows:
+
+```text
+       ⎡ 2 ⎤
+T(e₁)= ⎣ 1 ⎦
+
+       ⎡ 1 ⎤
+T(e₂)= ⎣ 3 ⎦
+```
+
+The transformation matrix is:
+
+```text
+       ⎡ 2  1 ⎤
+A  =   ⎣ 1  3 ⎦
+```
+
+For any input vector:
+
+```text
+       ⎡ x ⎤
+v  =   ⎣ y ⎦
+```
+
+The output is:
+
+```text
+       ⎡ 2  1 ⎤   ⎡ x ⎤
+T(v)=  ⎣ 1  3 ⎦ × ⎣ y ⎦
+```
+
+Therefore:
+
+```text
+       ⎡ 2x + y ⎤
+T(v)=  ⎣ x + 3y ⎦
+```
+
+## 6. Linear Transformation in Three Dimensions
+
+The same concept applies to three-dimensional vectors.
+
+A three-dimensional input vector is:
+
+```text
+       ⎡ x ⎤
+v  =   ⎢ y ⎥
+       ⎣ z ⎦
+```
+
+A general 3 × 3 transformation matrix is:
+
+```text
+       ⎡ a  b  c ⎤
+A  =   ⎢ d  e  f ⎥
+       ⎣ g  h  i ⎦
+```
+
+The transformation is:
+
+**T(v) = Av**
+
+After multiplication:
+
+```text
+       ⎡ ax + by + cz ⎤
+T(v)=  ⎢ dx + ey + fz ⎥
+       ⎣ gx + hy + iz ⎦
+```
+
+The output is another three-dimensional vector.
+
+## 7. Common Types of Linear Transformations
+
+### 7.1 Scaling Transformation
+
+Scaling changes the size of a vector.
+
+A two-dimensional scaling matrix is:
+
+```text
+       ⎡ sₓ  0  ⎤
+A  =   ⎣ 0   sᵧ ⎦
+```
+
+Where:
+- sₓ = scaling factor along the x-axis.
+- sᵧ = scaling factor along the y-axis.
+
+The transformation is:
+
+```text
+       ⎡ sₓx ⎤
+T(v)=  ⎣ sᵧy ⎦
+```
+
+### 7.2 Rotation Transformation
+
+A rotation transformation rotates a vector by an angle θ.
+
+The rotation matrix is:
+
+```text
+       ⎡ cos θ  -sin θ ⎤
+R  =   ⎣ sin θ   cos θ ⎦
+```
+
+The transformed vector is:
+
+**T(v) = Rv**
+
+### 7.3 Reflection Transformation
+
+Reflection changes the direction of a vector across a specified axis.
+
+Reflection across the x-axis:
+
+```text
+       ⎡ 1   0 ⎤
+A  =   ⎣ 0  -1 ⎦
+```
+
+Reflection across the y-axis:
+
+```text
+       ⎡ -1  0 ⎤
+A  =   ⎣  0  1 ⎦
+```
+
+### 7.4 Projection Transformation
+
+Projection maps a vector onto a line or subspace.
+
+Projection onto the x-axis:
+
+```text
+       ⎡ 1  0 ⎤
+P  =   ⎣ 0  0 ⎦
+```
+
+For an input vector:
+
+```text
+       ⎡ x ⎤
+v  =   ⎣ y ⎦
+```
+
+The output is:
+
+```text
+       ⎡ x ⎤
+P(v)=  ⎣ 0 ⎦
+```
+
+The y-coordinate becomes zero, while the x-coordinate remains unchanged.
+
+## 8. Composition of Linear Transformations
+
+Composition means applying one transformation after another.
+
+Suppose there are two transformations:
+
+**T₁(x) = A₁x**
+
+**T₂(x) = A₂x**
+
+Applying T₁ first and then T₂:
+
+**T₂(T₁(x)) = A₂(A₁x)**
+
+Using matrix multiplication:
+
+**T₂(T₁(x)) = (A₂A₁)x**
+
+Therefore, the combined transformation matrix is:
+
+**A = A₂A₁**
+
+The order of matrix multiplication is important. In general:
+
+**A₂A₁ ≠ A₁A₂**
+
+## 9. Identity Transformation
+
+An identity transformation leaves every vector unchanged.
+
+**T(v) = v**
+
+Its matrix is called the identity matrix.
+
+For two-dimensional space:
+
+```text
+       ⎡ 1  0 ⎤
+I  =   ⎣ 0  1 ⎦
+```
+
+For three-dimensional space:
+
+```text
+       ⎡ 1  0  0 ⎤
+I  =   ⎢ 0  1  0 ⎥
+       ⎣ 0  0  1 ⎦
+```
+
+For any compatible vector:
+
+**Iv = v**
+
+## 10. Zero Transformation
+
+A zero transformation maps every input vector to the zero vector.
+
+**T(v) = 0**
+
+Its matrix contains only zero elements.
+
+For two-dimensional space:
+
+```text
+       ⎡ 0  0 ⎤
+A  =   ⎣ 0  0 ⎦
+```
+
+For any input vector:
+
+```text
+       ⎡ x ⎤
+v  =   ⎣ y ⎦
+```
+
+The output is:
+
+```text
+       ⎡ 0 ⎤
+T(v)=  ⎣ 0 ⎦
+```
+
+## 11. Important Properties of Linear Transformations
+
+A linear transformation satisfies the following properties:
+
+1. **Preservation of Addition**
+
+   T(u + v) = T(u) + T(v)
+
+2. **Preservation of Scalar Multiplication**
+
+   T(cv) = cT(v)
+
+3. **Zero Vector Preservation**
+
+   T(0) = 0
+
+4. **Linear Combination Preservation**
+
+   T(au + bv) = aT(u) + bT(v)
+
+5. **Matrix Representation**
+
+   Every linear transformation between finite-dimensional vector spaces can be represented by a matrix after choosing bases.
+
+
+
+A common linear operation in a neural network is:
+
+**z = Wx + b**
+
+Where:
+
+- x = input vector
+- W = weight matrix
+- b = bias vector
+- z = output before activation
+
+The activation function is then applied:
+
+**a = f(z)**
