@@ -455,7 +455,9 @@ For projection onto the x-axis:
  P =  ⎣ 0  0 ⎦
 ```
 
-Lecture 3
+# LINEAR TRANSFORMATION AS MATRIX MULTIPLICATION
+
+## LECTURE 3 – LINEAR ALGEBRA
 ## 1. Linear Transformation
 
 A **linear transformation** is a function that maps vectors from one vector space to another while preserving vector addition and scalar multiplication.
@@ -892,7 +894,9 @@ The activation function is then applied:
 
 **a = f(z)**
 
-Lecture 4
+# 3D LINEAR TRANSFORMATION
+
+## LECTURE 4 – LINEAR ALGEBRA
 ## 1. Three-Dimensional (3D) Vector
 
 A three-dimensional vector represents a point or direction in 3D space using three coordinates: x, y, and z.
