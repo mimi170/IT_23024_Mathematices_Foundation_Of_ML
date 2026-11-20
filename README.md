@@ -1,291 +1,205 @@
 # IT_23024_Mathematices_Foundation_Of_ML
-# Foundations for Machine Learning
-## Lecture 2: Linear Algebra
+# Linear Algebra – Lecture 2
+## Foundations for Machine Learning
 
-**Source:** [Vizuara – Lecture 2](https://youtu.be/llV4uj58wuA)
+### 1. Introduction to Vectors
+
+A vector is a mathematical object that has both magnitude and direction. It is commonly represented as an ordered list of numbers.
+
+For example:
+
+$$
+\vec{x}=\begin{bmatrix}3\\4\end{bmatrix}
+$$
+
+Here, the vector has two components: 3 and 4.
+
+**Geometrical Representation of a Vector**
+
+<p align="center">
+  <img src="./images/01_vector.png" width="650" alt="Vector Representation">
+</p>
 
 ---
 
-## 1. Vector
+### 2. Vector Addition
 
-A vector is a mathematical object that has both magnitude and direction. It is represented by an ordered collection of numbers.
+Vector addition means adding the corresponding components of two or more vectors.
 
-For example,
-
-$$
-x = \begin{bmatrix}3\\4\end{bmatrix}
-$$
-
-Here, 3 represents the horizontal component and 4 represents the vertical component.
-
-A vector can be represented geometrically as an arrow starting from the origin (0,0) and ending at the point (3,4).
-
-**Magnitude of a Vector:**
-
-The magnitude or length of a vector is calculated using:
+Let,
 
 $$
-|x| = \sqrt{x_1^2+x_2^2}
-$$
-
-For the given example:
-
-$$
-|x| = \sqrt{3^2+4^2}
-$$
-
-$$
-= \sqrt{25}=5
-$$
-
-
-
-## 2. Vector Addition
-
-Vector addition is the operation of adding two or more vectors by adding their corresponding components.
-
-Suppose,
-
-$$
-x = \begin{bmatrix}3\\4\end{bmatrix},
+\vec{x}=\begin{bmatrix}3\\4\end{bmatrix},
 \quad
-y = \begin{bmatrix}2\\-1\end{bmatrix}
+\vec{y}=\begin{bmatrix}2\\-1\end{bmatrix}
 $$
 
 Then,
 
 $$
-x+y =
-\begin{bmatrix}
-3+2\\
-4+(-1)
-\end{bmatrix}
+\vec{x}+\vec{y}
+=
+\begin{bmatrix}3+2\\4+(-1)\end{bmatrix}
+=
+\begin{bmatrix}5\\3\end{bmatrix}
 $$
 
-$$
-\boxed{x+y=\begin{bmatrix}5\\3\end{bmatrix}}
-$$
+**Geometrical Representation of Vector Addition**
 
-Geometrically, vector addition can be represented using the head-to-tail method. The resultant vector connects the starting point of the first vector to the endpoint of the second vector.
+<p align="center">
+  <img src="./images/02_vector_addition.png" width="650" alt="Vector Addition">
+</p>
 
+---
 
+### 3. Scalar Multiplication
 
-## 3. Scalar Multiplication
+Scalar multiplication means multiplying a vector by a real number (scalar). Each component of the vector is multiplied by that scalar.
 
-Scalar multiplication means multiplying a vector by a single numerical value called a scalar.
-
-Suppose,
-
-$$
-y = \begin{bmatrix}2\\-1\end{bmatrix}
-$$
-
-Multiplying by scalar 2:
+Let,
 
 $$
-2y = 2\begin{bmatrix}2\\-1\end{bmatrix}
+\vec{y}=\begin{bmatrix}2\\-1\end{bmatrix}
 $$
 
-$$
-\boxed{2y=\begin{bmatrix}4\\-2\end{bmatrix}}
-$$
-
-Scalar multiplication changes the magnitude of a vector. A positive scalar preserves its direction, while a negative scalar reverses its direction.
-
-
-
-## 4. Unit Vectors and Vector Decomposition
-
-A unit vector is a vector whose magnitude is exactly equal to 1.
-
-In a two-dimensional coordinate system, the standard unit vectors are:
+Multiplying by 2:
 
 $$
-\hat{i}=\begin{bmatrix}1\\0\end{bmatrix}
+2\vec{y}
+=
+2\begin{bmatrix}2\\-1\end{bmatrix}
+=
+\begin{bmatrix}4\\-2\end{bmatrix}
 $$
 
-$$
-\hat{j}=\begin{bmatrix}0\\1\end{bmatrix}
-$$
+**Geometrical Representation of Scalar Multiplication**
 
-Here, $\hat{i}$ represents the horizontal direction (x-axis), and $\hat{j}$ represents the vertical direction (y-axis).
+<p align="center">
+  <img src="./images/03_scalar_multiplication.png" width="650" alt="Scalar Multiplication">
+</p>
 
-**Vector Decomposition:**
+---
 
-Any two-dimensional vector can be expressed as a linear combination of these two unit vectors.
+### 4. Standard Basis Vectors
 
-$$
-v=\begin{bmatrix}a\\b\end{bmatrix}
-=a\hat{i}+b\hat{j}
-$$
-
-For example,
+In two-dimensional space, the standard basis consists of two unit vectors:
 
 $$
-v=\begin{bmatrix}3\\4\end{bmatrix}
-=3\hat{i}+4\hat{j}
-$$
-
-This process is called vector decomposition because the vector is expressed through its individual components.
-
-
-
-## 5. Basis Vectors
-
-A basis is a set of linearly independent vectors that can generate the entire vector space through linear combinations.
-
-The standard basis of two-dimensional space consists of:
-
-$$
-e_1=\begin{bmatrix}1\\0\end{bmatrix},
+\vec{i}=\begin{bmatrix}1\\0\end{bmatrix},
 \quad
-e_2=\begin{bmatrix}0\\1\end{bmatrix}
+\vec{j}=\begin{bmatrix}0\\1\end{bmatrix}
 $$
 
-Any vector in 2D space can be represented using these two basis vectors.
+Every vector in 2D space can be represented as a linear combination of these two basis vectors.
+
+For example:
 
 $$
-v=\begin{bmatrix}a\\b\end{bmatrix}
-=ae_1+be_2
+\begin{bmatrix}3\\4\end{bmatrix}
+=3\vec{i}+4\vec{j}
 $$
 
-A basis must satisfy two conditions:
+**Geometrical Representation of Standard Basis Vectors**
 
-1. Its vectors must be linearly independent.
-2. Its vectors must span the entire vector space.
+<p align="center">
+  <img src="./images/04_standard_basis.png" width="650" alt="Standard Basis Vectors">
+</p>
 
-## 6. Span of Vectors
+---
 
-The span of a set of vectors is the set of all possible vectors that can be obtained through linear combinations of those vectors.
+### 5. Span of Vectors
 
-For two vectors $v_1$ and $v_2$:
+The span of a set of vectors is the set of all possible linear combinations of those vectors.
 
-$$
-Span(v_1,v_2)=
-\{av_1+bv_2\mid a,b\in\mathbb{R}\}
-$$
+If two vectors are linearly independent in 2D space, they can span the entire 2D plane.
 
-**Example 1: Two Independent Vectors**
-
-Suppose,
+For example:
 
 $$
-v_1=\begin{bmatrix}1\\0\end{bmatrix},
+\vec{v_1}=\begin{bmatrix}1\\0\end{bmatrix},
 \quad
-v_2=\begin{bmatrix}0\\1\end{bmatrix}
+\vec{v_2}=\begin{bmatrix}0\\1\end{bmatrix}
 $$
 
-Any vector $(a,b)$ can be generated using:
+Their linear combinations are:
 
 $$
-(a,b)=a(1,0)+b(0,1)
+a\vec{v_1}+b\vec{v_2}
+=
+\begin{bmatrix}a\\b\end{bmatrix}
 $$
 
-Therefore, these two vectors span the entire two-dimensional plane.
+Therefore, they span the entire 2D plane.
 
-![Span of Independent Vectors](images/05_span_plane.png)
+**Geometrical Representation of Span in 2D**
 
-**Example 2: Two Parallel Vectors**
+<p align="center">
+  <img src="./images/05_span_plane.png" width="650" alt="Span of Independent Vectors">
+</p>
 
-Suppose,
+---
+
+### 6. Linearly Dependent Vectors
+
+Two vectors are linearly dependent if one vector can be expressed as a scalar multiple of the other.
+
+For example:
 
 $$
-v_1=\begin{bmatrix}1\\2\end{bmatrix},
+\vec{v_1}=\begin{bmatrix}1\\2\end{bmatrix},
 \quad
-v_2=\begin{bmatrix}2\\4\end{bmatrix}
+\vec{v_2}=\begin{bmatrix}2\\4\end{bmatrix}
 $$
 
-Since,
+Here,
 
 $$
-v_2=2v_1
+\vec{v_2}=2\vec{v_1}
 $$
 
-Both vectors lie along the same direction. Therefore, their span is only a straight line rather than the entire 2D plane.
+These vectors are parallel and their span forms a line instead of the entire 2D plane.
 
+**Geometrical Representation of Linearly Dependent Vectors**
 
+<p align="center">
+  <img src="./images/06_span_line.png" width="650" alt="Span of Parallel Vectors">
+</p>
 
-## 7. Linear Independence and Dependence
+---
 
-Linear independence means that no vector in a set can be represented as a linear combination of the other vectors.
+### 7. Basis in Three-Dimensional Space
 
-For example,
-
-$$
-v_1=(1,0), \quad v_2=(0,1)
-$$
-
-These vectors are linearly independent because neither vector can be generated from the other.
-
-Linear dependence occurs when at least one vector can be represented as a linear combination of the other vectors.
-
-For example,
+In three-dimensional space, the standard basis consists of three linearly independent vectors:
 
 $$
-v_1=(1,2), \quad v_2=(2,4)
-$$
-
-Since,
-
-$$
-v_2=2v_1
-$$
-
-The vectors are linearly dependent.
-
-Mathematically, a set of vectors is linearly independent if:
-
-$$
-a_1v_1+a_2v_2+\cdots+a_nv_n=0
-$$
-
-has only the trivial solution:
-
-$$
-a_1=a_2=\cdots=a_n=0
-$$
-
-If a non-zero solution exists, the vectors are linearly dependent.
-
-## 8. Dimension of a Vector Space
-
-The dimension of a vector space is the number of vectors in its basis.
-
-Examples:
-
-- A line has dimension 1.
-- A two-dimensional plane has dimension 2.
-- Three-dimensional space has dimension 3.
-
-The dimension of a span is determined by the number of linearly independent vectors that generate it.
-
-Adding a redundant vector does not increase the dimension.
-
-## 9. Basis of Three-Dimensional Space
-
-The standard basis vectors in three-dimensional space are:
-
-$$
-e_1=\begin{bmatrix}1\\0\\0\end{bmatrix}
+\vec{e_1}=\begin{bmatrix}1\\0\\0\end{bmatrix}
 $$
 
 $$
-e_2=\begin{bmatrix}0\\1\\0\end{bmatrix}
+\vec{e_2}=\begin{bmatrix}0\\1\\0\end{bmatrix}
 $$
 
 $$
-e_3=\begin{bmatrix}0\\0\\1\end{bmatrix}
+\vec{e_3}=\begin{bmatrix}0\\0\\1\end{bmatrix}
 $$
 
-These three vectors represent the x, y and z directions respectively.
+These three vectors span the entire 3D space.
 
 Any vector in 3D space can be represented as:
 
 $$
-v=ae_1+be_2+ce_3
+\vec{v}=a\vec{e_1}+b\vec{e_2}+c\vec{e_3}
 $$
 
-Therefore, three linearly independent vectors are required to form a basis of three-dimensional space.
+**Geometrical Representation of 3D Basis Vectors**
 
+<p align="center">
+  <img src="./images/07_3d_basis.png" width="650" alt="Three Dimensional Basis">
+</p>
 
+---
+
+### Conclusion
+
+Vectors are fundamental elements of linear algebra. Vector addition and scalar multiplication help us perform basic vector operations. Span describes all possible linear combinations of vectors, while basis represents a set of linearly independent vectors that can generate a vector space. These concepts are important foundations for understanding machine learning and other mathematical applications.</WriteingBlock>
 
