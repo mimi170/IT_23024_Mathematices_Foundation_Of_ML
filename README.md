@@ -889,3 +889,459 @@ Where:
 The activation function is then applied:
 
 **a = f(z)**
+
+Lecture 4
+## 1. Three-Dimensional (3D) Vector
+
+A three-dimensional vector represents a point or direction in 3D space using three coordinates: x, y, and z.
+
+A 3D vector is represented as:
+
+```text
+       ⎡ x ⎤
+v  =   ⎢ y ⎥
+       ⎣ z ⎦
+```
+
+Where:
+- x represents the position along the x-axis.
+- y represents the position along the y-axis.
+- z represents the position along the z-axis.
+
+A 3D vector can also be written as:
+
+**v = (x, y, z)**
+
+## 2. Standard Basis Vectors in 3D
+
+The standard basis vectors in three-dimensional space are:
+
+```text
+       ⎡ 1 ⎤
+e₁ =   ⎢ 0 ⎥
+       ⎣ 0 ⎦
+
+       ⎡ 0 ⎤
+e₂ =   ⎢ 1 ⎥
+       ⎣ 0 ⎦
+
+       ⎡ 0 ⎤
+e₃ =   ⎢ 0 ⎥
+       ⎣ 1 ⎦
+```
+
+These vectors represent the positive directions of the x, y, and z axes respectively.
+
+Any 3D vector can be expressed as a linear combination of these three basis vectors.
+
+**v = xe₁ + ye₂ + ze₃**
+
+Therefore:
+
+```text
+       ⎡ x ⎤
+v  =   ⎢ y ⎥
+       ⎣ z ⎦
+```
+
+## 3. Linear Transformation in 3D
+
+A 3D linear transformation maps an input vector in three-dimensional space to another vector in three-dimensional space.
+
+The general form is:
+
+**T(v) = Av**
+
+Where:
+
+- A is a 3 × 3 transformation matrix.
+- v is the input vector.
+- T(v) is the transformed vector.
+
+A general 3 × 3 matrix is:
+
+```text
+       ⎡ a  b  c ⎤
+A  =   ⎢ d  e  f ⎥
+       ⎣ g  h  i ⎦
+```
+
+The input vector is:
+
+```text
+       ⎡ x ⎤
+v  =   ⎢ y ⎥
+       ⎣ z ⎦
+```
+
+After matrix multiplication:
+
+```text
+       ⎡ ax + by + cz ⎤
+T(v)=  ⎢ dx + ey + fz ⎥
+       ⎣ gx + hy + iz ⎦
+```
+
+## 4. Transformation of Standard Basis Vectors
+
+The transformation of the standard basis vectors determines the entire linear transformation.
+
+The three standard basis vectors are:
+
+**e₁ = (1, 0, 0)**
+
+**e₂ = (0, 1, 0)**
+
+**e₃ = (0, 0, 1)**
+
+For any vector:
+
+**v = xe₁ + ye₂ + ze₃**
+
+Applying the transformation:
+
+**T(v) = T(xe₁ + ye₂ + ze₃)**
+
+Using linearity:
+
+**T(v) = xT(e₁) + yT(e₂) + zT(e₃)**
+
+This means that if we know the transformed positions of the three standard basis vectors, we can determine the transformation of every vector in 3D space.
+
+## 5. Constructing a 3D Transformation Matrix
+
+A 3D transformation matrix is constructed by placing the transformed standard basis vectors into its columns.
+
+**A = [T(e₁)  T(e₂)  T(e₃)]**
+
+In matrix form:
+
+```text
+       ⎡ T(e₁)ₓ  T(e₂)ₓ  T(e₃)ₓ ⎤
+A  =   ⎢ T(e₁)ᵧ  T(e₂)ᵧ  T(e₃)ᵧ ⎥
+       ⎣ T(e₁)ᵤ  T(e₂)ᵤ  T(e₃)ᵤ ⎦
+```
+
+Here, each column represents the transformed version of one standard basis vector.
+
+### Example
+
+Suppose the transformation maps the standard basis vectors as follows:
+
+```text
+       ⎡ 2 ⎤
+T(e₁)= ⎢ 0 ⎥
+       ⎣ 1 ⎦
+
+       ⎡ 1 ⎤
+T(e₂)= ⎢ 3 ⎥
+       ⎣ 0 ⎦
+
+       ⎡ 0 ⎤
+T(e₃)= ⎢ 1 ⎥
+       ⎣ 2 ⎦
+```
+
+The transformation matrix is:
+
+```text
+       ⎡ 2  1  0 ⎤
+A  =   ⎢ 0  3  1 ⎥
+       ⎣ 1  0  2 ⎦
+```
+
+For an input vector:
+
+```text
+       ⎡ 1 ⎤
+v  =   ⎢ 2 ⎥
+       ⎣ 3 ⎦
+```
+
+The output is:
+
+**T(v) = Av**
+
+```text
+       ⎡ 2  1  0 ⎤   ⎡ 1 ⎤
+     = ⎢ 0  3  1 ⎥ × ⎢ 2 ⎥
+       ⎣ 1  0  2 ⎦   ⎣ 3 ⎦
+```
+
+Calculating each component:
+
+```text
+       ⎡ (2×1) + (1×2) + (0×3) ⎤
+     = ⎢ (0×1) + (3×2) + (1×3) ⎥
+       ⎣ (1×1) + (0×2) + (2×3) ⎦
+```
+
+Therefore:
+
+```text
+       ⎡ 4 ⎤
+T(v)=  ⎢ 9 ⎥
+       ⎣ 7 ⎦
+```
+
+## 6. Common 3D Linear Transformations
+
+### 6.1 Scaling Transformation
+
+Scaling changes the size of a vector along the x, y, and z axes.
+
+The 3D scaling matrix is:
+
+```text
+       ⎡ sₓ  0   0  ⎤
+A  =   ⎢ 0   sᵧ  0  ⎥
+       ⎣ 0   0   s𝓏 ⎦
+```
+
+Where:
+- sₓ = scaling factor along the x-axis.
+- sᵧ = scaling factor along the y-axis.
+- s𝓏 = scaling factor along the z-axis.
+
+The transformed vector is:
+
+```text
+       ⎡ sₓx ⎤
+T(v)=  ⎢ sᵧy ⎥
+       ⎣ s𝓏z ⎦
+```
+
+### 6.2 Rotation Around the X-Axis
+
+A rotation around the x-axis changes the y and z coordinates while keeping the x-coordinate unchanged.
+
+The rotation matrix is:
+
+```text
+       ⎡ 1    0        0      ⎤
+Rₓ =   ⎢ 0   cos θ   -sin θ  ⎥
+       ⎣ 0   sin θ    cos θ  ⎦
+```
+
+### 6.3 Rotation Around the Y-Axis
+
+A rotation around the y-axis changes the x and z coordinates while keeping the y-coordinate unchanged.
+
+The rotation matrix is:
+
+```text
+       ⎡ cos θ   0   sin θ ⎤
+Rᵧ =   ⎢   0     1     0   ⎥
+       ⎣-sin θ   0   cos θ ⎦
+```
+
+### 6.4 Rotation Around the Z-Axis
+
+A rotation around the z-axis changes the x and y coordinates while keeping the z-coordinate unchanged.
+
+The rotation matrix is:
+
+```text
+       ⎡ cos θ  -sin θ   0 ⎤
+R𝓏 =   ⎢ sin θ   cos θ   0 ⎥
+       ⎣   0       0     1 ⎦
+```
+
+### 6.5 Reflection Transformation
+
+Reflection changes the direction of a vector across a specified plane.
+
+Reflection across the XY-plane:
+
+```text
+       ⎡ 1   0   0  ⎤
+A  =   ⎢ 0   1   0  ⎥
+       ⎣ 0   0  -1  ⎦
+```
+
+Reflection across the YZ-plane:
+
+```text
+       ⎡ -1  0   0 ⎤
+A  =   ⎢  0  1   0 ⎥
+       ⎣  0  0   1 ⎦
+```
+
+Reflection across the XZ-plane:
+
+```text
+       ⎡ 1   0   0 ⎤
+A  =   ⎢ 0  -1   0 ⎥
+       ⎣ 0   0   1 ⎦
+```
+
+## 7. Composition of 3D Transformations
+
+Composition means applying multiple transformations one after another.
+
+Suppose two transformations are represented by:
+
+**T₁(v) = A₁v**
+
+**T₂(v) = A₂v**
+
+Applying T₁ first and then T₂:
+
+**T₂(T₁(v)) = A₂(A₁v)**
+
+Using matrix multiplication:
+
+**T₂(T₁(v)) = (A₂A₁)v**
+
+Therefore, the combined transformation matrix is:
+
+**A = A₂A₁**
+
+The order of matrix multiplication is important.
+
+In general:
+
+**A₂A₁ ≠ A₁A₂**
+
+## 8. Identity Transformation in 3D
+
+An identity transformation leaves every vector unchanged.
+
+**T(v) = v**
+
+The 3D identity matrix is:
+
+```text
+       ⎡ 1  0  0 ⎤
+I  =   ⎢ 0  1  0 ⎥
+       ⎣ 0  0  1 ⎦
+```
+
+For any compatible vector:
+
+**Iv = v**
+
+## 9. Zero Transformation in 3D
+
+A zero transformation maps every input vector to the zero vector.
+
+**T(v) = 0**
+
+The 3D zero matrix is:
+
+```text
+       ⎡ 0  0  0 ⎤
+A  =   ⎢ 0  0  0 ⎥
+       ⎣ 0  0  0 ⎦
+```
+
+For any input vector:
+
+```text
+       ⎡ x ⎤
+v  =   ⎢ y ⎥
+       ⎣ z ⎦
+```
+
+The output is:
+
+```text
+       ⎡ 0 ⎤
+T(v)=  ⎢ 0 ⎥
+       ⎣ 0 ⎦
+```
+
+## 10. Invertible Linear Transformation
+
+A linear transformation is invertible if an inverse transformation exists that can recover the original input vector.
+
+If:
+
+**T(v) = Av**
+
+Then the inverse transformation is:
+
+**v = A⁻¹T(v)**
+
+The inverse matrix satisfies:
+
+**A⁻¹A = AA⁻¹ = I**
+
+A square matrix is invertible if its determinant is non-zero.
+
+**det(A) ≠ 0**
+
+If the determinant is zero, the matrix is singular and does not have an inverse.
+
+## 11. Determinant of a 3 × 3 Matrix
+
+For a 3 × 3 matrix:
+
+```text
+       ⎡ a  b  c ⎤
+A  =   ⎢ d  e  f ⎥
+       ⎣ g  h  i ⎦
+```
+
+Its determinant is:
+
+**det(A) = a(ei − fh) − b(di − fg) + c(dh − eg)**
+
+The determinant provides information about how a linear transformation changes the volume of a three-dimensional region.
+
+- If det(A) is positive, orientation is preserved.
+- If det(A) is negative, orientation is reversed.
+- If det(A) is zero, the transformation collapses the 3D space into a lower-dimensional space.
+
+The absolute value of the determinant represents the volume scaling factor.
+
+**Volume scaling factor = |det(A)|**
+
+## 12. Volume and Linear Transformation
+
+A 3D linear transformation can change the volume of a geometric object.
+
+If the original volume is V, then the transformed volume is:
+
+**V′ = |det(A)| × V**
+
+Example:
+
+If:
+
+**det(A) = 3**
+
+And the original volume is:
+
+**V = 5**
+
+Then:
+
+**V′ = 3 × 5 = 15**
+
+The transformed volume is 15 cubic units.
+
+## 13. Linear Transformations in Machine Learning
+
+Three-dimensional linear transformations are useful for understanding how data is transformed in higher-dimensional spaces.
+
+- **Data representation:** Data points can be represented as vectors with multiple numerical features.
+- **Feature transformation:** Matrix multiplication transforms input features into new representations.
+- **Neural networks:** Weight matrices transform input vectors into new feature representations.
+- **Computer vision:** 3D transformations are used in object positioning, rotation, and geometric operations.
+- **Dimensionality reduction:** Linear transformations can map high-dimensional data into lower-dimensional representations.
+- **Scientific computing:** Matrix transformations are used in simulations and numerical calculations.
+
+A common linear operation in a machine learning model is:
+
+**z = Wx + b**
+
+Where:
+- x = input vector.
+- W = weight matrix.
+- b = bias vector.
+- z = transformed output before activation.
+
+The activation function is then applied:
+
+**a = f(z)**
