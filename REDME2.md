@@ -2626,3 +2626,1000 @@ $$
 
 ---
 
+# Lecture 15: Hypothesis Testing
+
+## 1. Introduction
+
+Hypothesis Testing is a statistical method used to make decisions or draw conclusions about a population based on sample data.
+
+It helps us determine whether there is enough statistical evidence to support a particular assumption or claim.
+
+In Machine Learning and Statistics, hypothesis testing is used to analyze data, test assumptions, and evaluate the significance of results.
+
+## 2. What is a Hypothesis?
+
+A hypothesis is a statement or assumption about a population parameter that can be tested using statistical methods.
+
+**Example:**
+
+Suppose a university claims that the average study time of its students is 5 hours per day.
+
+We can collect sample data and test whether this claim is supported by the evidence.
+
+## 3. Types of Hypothesis
+
+There are two main types of hypotheses.
+
+### 3.1 Null Hypothesis (H₀)
+
+The Null Hypothesis represents the initial assumption that there is no significant effect, difference, or relationship between variables.
+
+It is denoted by:
+
+$$
+H_0
+$$
+
+**Example:**
+
+$$
+H_0:\mu=5
+$$
+
+Here, \(\mu\) represents the population mean.
+
+### 3.2 Alternative Hypothesis (H₁)
+
+The Alternative Hypothesis represents the statement that contradicts the null hypothesis.
+
+It indicates that there is a significant effect, difference, or relationship.
+
+It is denoted by:
+
+$$
+H_1
+$$
+
+For the previous example:
+
+$$
+H_1:\mu\neq5
+$$
+
+This means the average study time is not equal to 5 hours.
+
+## 4. Types of Alternative Hypothesis
+
+### 4.1 Two-Tailed Test
+
+A two-tailed test is used when we want to determine whether a population parameter is either greater than or less than a specified value.
+
+Example:
+
+$$
+H_0:\mu=50
+$$
+
+$$
+H_1:\mu\neq50
+$$
+
+### 4.2 Right-Tailed Test
+
+A right-tailed test is used when we want to determine whether the population parameter is greater than a specified value.
+
+Example:
+
+$$
+H_0:\mu=50
+$$
+
+$$
+H_1:\mu>50
+$$
+
+### 4.3 Left-Tailed Test
+
+A left-tailed test is used when we want to determine whether the population parameter is less than a specified value.
+
+Example:
+
+$$
+H_0:\mu=50
+$$
+
+$$
+H_1:\mu<50
+$$
+
+## 5. Significance Level (α)
+
+The significance level is the probability of rejecting the null hypothesis when it is actually true.
+
+It is denoted by:
+
+$$
+\alpha
+$$
+
+Common significance levels are:
+
+- 0.10 or 10%
+- 0.05 or 5%
+- 0.01 or 1%
+
+For example, if:
+
+$$
+\alpha=0.05
+$$
+
+It means we accept a 5% risk of making a Type I error.
+
+## 6. P-Value
+
+The P-value is the probability of obtaining a result as extreme as, or more extreme than, the observed result, assuming that the null hypothesis is true.
+
+It helps us decide whether the sample evidence is statistically significant.
+
+**Decision Rule:**
+
+- If P-value ≤ α, reject the null hypothesis.
+- If P-value > α, fail to reject the null hypothesis.
+
+**Example:**
+
+Suppose:
+
+$$
+P\text{-value}=0.03
+$$
+
+And,
+
+$$
+\alpha=0.05
+$$
+
+Since,
+
+$$
+0.03<0.05
+$$
+
+We reject the null hypothesis.
+
+## 7. Type I and Type II Errors
+
+### 7.1 Type I Error
+
+A Type I error occurs when we reject the null hypothesis even though it is actually true.
+
+It is represented by:
+
+$$
+\alpha
+$$
+
+**Example:** A medical test concludes that a healthy person has a disease.
+
+### 7.2 Type II Error
+
+A Type II error occurs when we fail to reject the null hypothesis even though it is actually false.
+
+It is represented by:
+
+$$
+\beta
+$$
+
+**Example:** A medical test concludes that a person does not have a disease when the person actually has it.
+
+## 8. Test Statistic
+
+A test statistic is a numerical value calculated from sample data. It is used to determine whether the null hypothesis should be rejected.
+
+The general Z-test formula for a population mean, when the population standard deviation is known, is:
+
+$$
+Z=\frac{\bar{x}-\mu}{\sigma/\sqrt{n}}
+$$
+
+Where:
+
+- \(\bar{x}\) = Sample mean.
+- \(\mu\) = Population mean under the null hypothesis.
+- \(\sigma\) = Population standard deviation.
+- \(n\) = Sample size.
+
+## 9. Z-Test
+
+A Z-test is a statistical test used to determine whether there is a significant difference between a sample statistic and a population parameter.
+
+It is commonly used when the population standard deviation is known and the sampling distribution is normal or the sample size is sufficiently large.
+
+**Formula:**
+
+$$
+Z=\frac{\bar{x}-\mu}{\sigma/\sqrt{n}}
+$$
+
+### Solved Numerical Example
+
+**Problem:**
+
+A company claims that the average weight of its product is 50 kg. A sample of 36 products has an average weight of 52 kg. The population standard deviation is 6 kg.
+
+Test the company's claim at a 5% significance level using a two-tailed Z-test.
+
+**Solution:**
+
+Given:
+
+$$
+\mu=50,\quad \bar{x}=52
+$$
+
+$$
+\sigma=6,\quad n=36
+$$
+
+$$
+\alpha=0.05
+$$
+
+**Step 1: Formulate the Hypotheses**
+
+$$
+H_0:\mu=50
+$$
+
+$$
+H_1:\mu\neq50
+$$
+
+**Step 2: Calculate the Test Statistic**
+
+$$
+Z=\frac{\bar{x}-\mu}{\sigma/\sqrt{n}}
+$$
+
+$$
+Z=\frac{52-50}{6/\sqrt{36}}
+$$
+
+$$
+=\frac{2}{6/6}
+$$
+
+$$
+=\frac{2}{1}
+$$
+
+$$
+\boxed{Z=2}
+$$
+
+**Step 3: Determine the Critical Value**
+
+For a two-tailed test at a 5% significance level:
+
+$$
+Z_{\text{critical}}=\pm1.96
+$$
+
+**Step 4: Make the Decision**
+
+Since,
+
+$$
+|Z|=2>1.96
+$$
+
+We reject the null hypothesis.
+
+**Answer:** There is sufficient statistical evidence at the 5% significance level to conclude that the average product weight is different from 50 kg.
+
+## 10. T-Test
+
+A T-test is a statistical test used to determine whether there is a significant difference between means.
+
+It is generally used when the population standard deviation is unknown, especially for small samples when the data are approximately normally distributed.
+
+For a one-sample T-test, the formula is:
+
+$$
+t=\frac{\bar{x}-\mu}{s/\sqrt{n}}
+$$
+
+Where:
+
+- \(\bar{x}\) = Sample mean.
+- \(\mu\) = Hypothesized population mean.
+- \(s\) = Sample standard deviation.
+- \(n\) = Sample size.
+
+The degrees of freedom are:
+
+$$
+df=n-1
+$$
+
+## 11. Confidence Interval
+
+A confidence interval is a range of values used to estimate an unknown population parameter based on sample data.
+
+For a population mean with known population standard deviation, the confidence interval is:
+
+$$
+\bar{x}\pm Z_{\alpha/2}\frac{\sigma}{\sqrt{n}}
+$$
+
+Where:
+
+- \(\bar{x}\) = Sample mean.
+- \(Z_{\alpha/2}\) = Critical Z-value.
+- \(\sigma\) = Population standard deviation.
+- \(n\) = Sample size.
+
+For example, a 95% confidence interval uses:
+
+$$
+Z_{\alpha/2}=1.96
+$$
+
+## 12. Steps of Hypothesis Testing
+
+1. State the null hypothesis (\(H_0\)).
+2. State the alternative hypothesis (\(H_1\)).
+3. Select the significance level (\(\alpha\)).
+4. Choose the appropriate statistical test.
+5. Calculate the test statistic using sample data.
+6. Determine the P-value or critical value.
+7. Reject or fail to reject the null hypothesis.
+8. Interpret the result in the context of the problem.
+
+## 13. Applications of Hypothesis Testing
+
+1. **Machine Learning:** Evaluating whether a model improvement is statistically significant.
+2. **Medical Research:** Testing the effectiveness of medicines and treatments.
+3. **Business:** Evaluating changes in sales, profit, and customer behavior.
+4. **Education:** Testing whether a new teaching method improves student performance.
+5. **Scientific Research:** Testing assumptions and validating research findings.
+
+## 14. Important Formulas
+
+**Z-Test:**
+
+$$
+Z=\frac{\bar{x}-\mu}{\sigma/\sqrt{n}}
+$$
+
+**T-Test:**
+
+$$
+t=\frac{\bar{x}-\mu}{s/\sqrt{n}}
+$$
+
+**Degrees of Freedom:**
+
+$$
+df=n-1
+$$
+
+**Confidence Interval:**
+
+$$
+\bar{x}\pm Z_{\alpha/2}\frac{\sigma}{\sqrt{n}}
+$$
+
+**Decision Rule:**
+
+$$
+P\text{-value}\leq\alpha
+\Rightarrow \text{Reject }H_0
+$$
+
+$$
+P\text{-value}>\alpha
+\Rightarrow \text{Fail to reject }H_0
+$$
+
+# Lecture 16: Naive Bayes Classification and Model Evaluation
+
+## 1. Introduction
+
+Naive Bayes is a supervised Machine Learning algorithm based on Bayes' Theorem. It is mainly used for classification problems.
+
+It predicts the class of a given data point by calculating the probability of each possible class.
+
+Model Evaluation is the process of measuring how well a Machine Learning model performs on a dataset.
+
+Confusion Matrix, Accuracy, Precision, Recall, and F1-Score are commonly used evaluation techniques for classification models.
+
+## 2. Naive Bayes Classifier
+
+Naive Bayes is a probabilistic classification algorithm based on Bayes' Theorem.
+
+It is called "Naive" because it assumes that all features are conditionally independent given the class label.
+
+The general Bayes' Theorem is:
+
+$$
+P(A|B)=\frac{P(B|A)P(A)}{P(B)}
+$$
+
+For classification, the formula becomes:
+
+$$
+P(C|X)=\frac{P(X|C)P(C)}{P(X)}
+$$
+
+Where:
+
+- \(P(C|X)\) = Posterior probability of class C given features X.
+- \(P(X|C)\) = Likelihood of features X given class C.
+- \(P(C)\) = Prior probability of class C.
+- \(P(X)\) = Evidence or probability of features X.
+
+The predicted class is:
+
+$$
+C_{\text{predicted}}=\arg\max_C P(C|X)
+$$
+
+Since \(P(X)\) is the same for all classes, we can write:
+
+$$
+C_{\text{predicted}}=\arg\max_C P(X|C)P(C)
+$$
+
+## 3. Naive Bayes Assumption
+
+The Naive Bayes classifier assumes that all features are conditionally independent of each other given the class.
+
+For example, suppose we want to classify an email as Spam or Not Spam using two features:
+
+- Contains the word "Free".
+- Contains the word "Offer".
+
+Under the Naive Bayes assumption:
+
+$$
+P(X_1,X_2|C)=P(X_1|C)P(X_2|C)
+$$
+
+For multiple features:
+
+$$
+P(X|C)=\prod_{i=1}^{n}P(X_i|C)
+$$
+
+Where:
+
+- \(X_i\) = Individual feature.
+- \(C\) = Class label.
+- \(n\) = Total number of features.
+
+## 4. Types of Naive Bayes Classifier
+
+There are three commonly used types of Naive Bayes classifiers.
+
+### 4.1 Gaussian Naive Bayes
+
+Gaussian Naive Bayes is used when the features are continuous numerical values.
+
+It assumes that the values of each feature follow a Gaussian (Normal) distribution within each class.
+
+The Gaussian probability density function is:
+
+$$
+P(x|C)=\frac{1}{\sqrt{2\pi\sigma^2}}
+e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+$$
+
+Where:
+
+- \(x\) = Observed feature value.
+- \(\mu\) = Mean of the feature for a particular class.
+- \(\sigma^2\) = Variance of the feature for a particular class.
+- \(\pi\) = Mathematical constant.
+
+**Example:**
+
+Predicting whether a person belongs to a particular category based on continuous features such as height, weight, or temperature.
+
+### 4.2 Multinomial Naive Bayes
+
+Multinomial Naive Bayes is commonly used for text classification.
+
+It works with discrete feature counts, such as the number of times a word appears in a document.
+
+The probability of a feature is:
+
+$$
+P(X_i|C)=
+\frac{\text{Count}(X_i,C)+\alpha}
+{\text{Total feature count in C}+\alpha V}
+$$
+
+Where:
+
+- \(\text{Count}(X_i,C)\) = Count of feature \(X_i\) in class C.
+- \(\alpha\) = Smoothing parameter.
+- \(V\) = Number of unique features in the vocabulary.
+
+**Example:**
+
+Classifying emails as Spam or Not Spam based on word frequencies.
+
+### 4.3 Bernoulli Naive Bayes
+
+Bernoulli Naive Bayes is used when features are binary.
+
+Each feature can have only two possible values:
+
+$$
+X_i\in\{0,1\}
+$$
+
+Where:
+
+- 1 = Feature is present.
+- 0 = Feature is absent.
+
+**Example:**
+
+Classifying an email based on whether certain words are present or absent.
+
+## 5. Laplace Smoothing
+
+Laplace Smoothing is used in Naive Bayes to avoid zero probabilities.
+
+Sometimes a particular feature does not appear in the training data for a class. Without smoothing, its probability becomes zero.
+
+Since Naive Bayes multiplies probabilities, a single zero probability can make the entire class probability zero.
+
+The Laplace smoothing formula is:
+
+$$
+P(X_i|C)=
+\frac{\text{Count}(X_i,C)+1}
+{\text{Total count in C}+V}
+$$
+
+Where:
+
+- \(X_i\) = Feature.
+- \(C\) = Class.
+- \(V\) = Number of unique features.
+
+The value 1 is added to each feature count to prevent zero probabilities.
+
+## 6. Solved Example of Naive Bayes Classification
+
+**Problem:**
+
+Suppose an email contains the word "Free". We want to predict whether the email is Spam or Not Spam.
+
+Given:
+
+$$
+P(Spam)=0.4
+$$
+
+$$
+P(Not\ Spam)=0.6
+$$
+
+$$
+P(Free|Spam)=0.8
+$$
+
+$$
+P(Free|Not\ Spam)=0.1
+$$
+
+Find the probability that the email is Spam given that it contains the word "Free".
+
+**Solution:**
+
+Using Bayes' Theorem:
+
+$$
+P(Spam|Free)=
+\frac{P(Free|Spam)P(Spam)}
+{P(Free)}
+$$
+
+First, calculate \(P(Free)\):
+
+$$
+P(Free)=P(Free|Spam)P(Spam)
+$$
+
+$$
++P(Free|Not\ Spam)P(Not\ Spam)
+$$
+
+Substituting the values:
+
+$$
+=(0.8\times0.4)+(0.1\times0.6)
+$$
+
+$$
+=0.32+0.06
+$$
+
+$$
+=0.38
+$$
+
+Now calculate:
+
+$$
+P(Spam|Free)=\frac{0.8\times0.4}{0.38}
+$$
+
+$$
+=\frac{0.32}{0.38}
+$$
+
+$$
+=0.8421
+$$
+
+Therefore:
+
+$$
+\boxed{P(Spam|Free)=84.21\%}
+$$
+
+**Answer:** The probability that the email is Spam is approximately 84.21%.
+
+## 7. Machine Learning Model Evaluation
+
+Model Evaluation is the process of measuring the performance of a Machine Learning model.
+
+It helps us understand how accurately a model predicts the output for unseen data.
+
+For classification problems, common evaluation metrics include:
+
+1. Confusion Matrix.
+2. Accuracy.
+3. Precision.
+4. Recall.
+5. F1-Score.
+
+## 8. Confusion Matrix
+
+A Confusion Matrix is a table used to evaluate the performance of a classification model.
+
+It compares the actual class labels with the predicted class labels.
+
+For binary classification, the confusion matrix contains four important values:
+
+| Actual / Predicted | Positive | Negative |
+|---|---:|---:|
+| Positive | True Positive (TP) | False Negative (FN) |
+| Negative | False Positive (FP) | True Negative (TN) |
+
+### 8.1 True Positive (TP)
+
+True Positive occurs when the actual class is positive and the model also predicts positive.
+
+**Example:** A patient has a disease, and the model correctly predicts that the patient has the disease.
+
+### 8.2 True Negative (TN)
+
+True Negative occurs when the actual class is negative and the model also predicts negative.
+
+**Example:** A patient does not have a disease, and the model correctly predicts that the patient does not have the disease.
+
+### 8.3 False Positive (FP)
+
+False Positive occurs when the actual class is negative, but the model predicts positive.
+
+**Example:** A healthy patient is incorrectly classified as having a disease.
+
+### 8.4 False Negative (FN)
+
+False Negative occurs when the actual class is positive, but the model predicts negative.
+
+**Example:** A patient has a disease, but the model incorrectly predicts that the patient does not have the disease.
+
+## 9. Accuracy
+
+Accuracy measures the percentage of correctly classified predictions out of all predictions.
+
+The formula is:
+
+$$
+Accuracy=\frac{TP+TN}{TP+TN+FP+FN}
+$$
+
+**Example:**
+
+Suppose:
+
+$$
+TP=40,\quad TN=50
+$$
+
+$$
+FP=5,\quad FN=5
+$$
+
+Then:
+
+$$
+Accuracy=\frac{40+50}{40+50+5+5}
+$$
+
+$$
+=\frac{90}{100}
+$$
+
+$$
+\boxed{Accuracy=90\%}
+$$
+
+## 10. Precision
+
+Precision measures how many of the instances predicted as positive are actually positive.
+
+The formula is:
+
+$$
+Precision=\frac{TP}{TP+FP}
+$$
+
+**Example:**
+
+Suppose:
+
+$$
+TP=40,\quad FP=5
+$$
+
+Then:
+
+$$
+Precision=\frac{40}{40+5}
+$$
+
+$$
+=\frac{40}{45}
+$$
+
+$$
+\boxed{Precision=88.89\%}
+$$
+
+## 11. Recall (Sensitivity)
+
+Recall measures how many of the actual positive instances are correctly identified by the model.
+
+The formula is:
+
+$$
+Recall=\frac{TP}{TP+FN}
+$$
+
+**Example:**
+
+Suppose:
+
+$$
+TP=40,\quad FN=5
+$$
+
+Then:
+
+$$
+Recall=\frac{40}{40+5}
+$$
+
+$$
+=\frac{40}{45}
+$$
+
+$$
+\boxed{Recall=88.89\%}
+$$
+
+## 12. F1-Score
+
+F1-Score is the harmonic mean of Precision and Recall.
+
+It provides a single performance measure by considering both Precision and Recall.
+
+The formula is:
+
+$$
+F1=2\times\frac{Precision\times Recall}
+{Precision+Recall}
+$$
+
+Another formula using confusion matrix values is:
+
+$$
+F1=\frac{2TP}{2TP+FP+FN}
+$$
+
+**Example:**
+
+Suppose:
+
+$$
+Precision=0.8889
+$$
+
+$$
+Recall=0.8889
+$$
+
+Then:
+
+$$
+F1=2\times
+\frac{0.8889\times0.8889}
+{0.8889+0.8889}
+$$
+
+$$
+\boxed{F1=0.8889=88.89\%}
+$$
+
+## 13. Complete Numerical Example of Confusion Matrix
+
+**Problem:**
+
+A classification model produces the following results:
+
+- True Positive (TP) = 80
+- True Negative (TN) = 90
+- False Positive (FP) = 10
+- False Negative (FN) = 20
+
+Calculate Accuracy, Precision, Recall, and F1-Score.
+
+**Solution:**
+
+**Step 1: Calculate Accuracy**
+
+$$
+Accuracy=\frac{TP+TN}{TP+TN+FP+FN}
+$$
+
+$$
+=\frac{80+90}{80+90+10+20}
+$$
+
+$$
+=\frac{170}{200}
+$$
+
+$$
+\boxed{Accuracy=85\%}
+$$
+
+**Step 2: Calculate Precision**
+
+$$
+Precision=\frac{TP}{TP+FP}
+$$
+
+$$
+=\frac{80}{80+10}
+$$
+
+$$
+=\frac{80}{90}
+$$
+
+$$
+\boxed{Precision=88.89\%}
+$$
+
+**Step 3: Calculate Recall**
+
+$$
+Recall=\frac{TP}{TP+FN}
+$$
+
+$$
+=\frac{80}{80+20}
+$$
+
+$$
+=\frac{80}{100}
+$$
+
+$$
+\boxed{Recall=80\%}
+$$
+
+**Step 4: Calculate F1-Score**
+
+$$
+F1=\frac{2TP}{2TP+FP+FN}
+$$
+
+$$
+=\frac{2\times80}{160+10+20}
+$$
+
+$$
+=\frac{160}{190}
+$$
+
+$$
+\boxed{F1=84.21\%}
+$$
+
+**Final Results:**
+
+| Evaluation Metric | Result |
+|---|---:|
+| Accuracy | 85% |
+| Precision | 88.89% |
+| Recall | 80% |
+| F1-Score | 84.21% |
+
+## 14. Applications of Naive Bayes and Model Evaluation
+
+1. **Spam Detection:** Identifying spam and non-spam emails.
+2. **Sentiment Analysis:** Classifying text as positive, negative, or neutral.
+3. **Document Classification:** Categorizing documents based on their content.
+4. **Medical Diagnosis:** Predicting diseases based on patient data.
+5. **Performance Evaluation:** Measuring how well a classification model performs.
+6. **Fraud Detection:** Identifying potentially fraudulent transactions.
+
+## 15. Important Formulas
+
+**Bayes' Theorem:**
+
+$$
+P(C|X)=\frac{P(X|C)P(C)}{P(X)}
+$$
+
+**Naive Bayes Classification:**
+
+$$
+C_{\text{predicted}}=\arg\max_C P(X|C)P(C)
+$$
+
+**Accuracy:**
+
+$$
+Accuracy=\frac{TP+TN}{TP+TN+FP+FN}
+$$
+
+**Precision:**
+
+$$
+Precision=\frac{TP}{TP+FP}
+$$
+
+**Recall:**
+
+$$
+Recall=\frac{TP}{TP+FN}
+$$
+
+**F1-Score:**
+
+$$
+F1=2\times\frac{Precision\times Recall}
+{Precision+Recall}
+$$
+
+**Laplace Smoothing:**
+
+$$
+P(X_i|C)=
+\frac{\text{Count}(X_i,C)+1}
+{\text{Total count in C}+V}
+$$
