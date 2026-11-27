@@ -1741,5 +1741,888 @@ $$
 **Remember:** Bayes’ Theorem is used to update the prior probability of an event using new evidence and calculate its posterior probability.
 
 ---
+# Lecture 14: Probability Distributions
 
-**END OF LECTURE 13**
+## 1. Introduction
+
+A Probability Distribution describes how the probabilities of different possible outcomes of a random variable are distributed.
+
+It tells us how likely each value of a random variable is to occur.
+
+Probability distributions are important in statistics, probability theory, and Machine Learning because they help us understand uncertainty and analyze data.
+
+## 2. Random Variable
+
+A random variable is a variable whose value depends on the outcome of a random experiment.
+
+It is usually represented by a capital letter such as \(X\).
+
+**Example:**
+
+When a coin is tossed, the possible outcomes are:
+
+$$
+S=\{H,T\}
+$$
+
+Let,
+
+$$
+X=
+\begin{cases}
+1 & \text{if Head occurs}\\
+0 & \text{if Tail occurs}
+\end{cases}
+$$
+
+Here, \(X\) is a random variable because its value depends on the outcome of the coin toss.
+
+## 3. Types of Random Variables
+
+There are two main types of random variables.
+
+### 3.1 Discrete Random Variable
+
+A discrete random variable takes countable values.
+
+**Examples:**
+
+- Number of students in a classroom.
+- Number of heads in three coin tosses.
+- Number of defective products in a batch.
+- Number of customers visiting a shop.
+
+For example, when a coin is tossed three times, the number of heads can be:
+
+$$
+X=\{0,1,2,3\}
+$$
+
+### 3.2 Continuous Random Variable
+
+A continuous random variable can take any value within a given interval.
+
+**Examples:**
+
+- Height of a person.
+- Weight of a student.
+- Temperature of a city.
+- Time required to complete a task.
+
+For example, a person's height may be 160.5 cm, 160.55 cm, or 160.555 cm.
+
+## 4. Probability Distribution
+
+A probability distribution is a mathematical function that describes the possible values of a random variable and their corresponding probabilities.
+
+For a discrete random variable, the probability distribution must satisfy two conditions:
+
+**Condition 1:**
+
+Every probability must be between 0 and 1.
+
+$$
+0\leq P(X=x)\leq 1
+$$
+
+**Condition 2:**
+
+The sum of all probabilities must be equal to 1.
+
+$$
+\sum_x P(X=x)=1
+$$
+
+## 5. Probability Mass Function (PMF)
+
+A Probability Mass Function (PMF) gives the probability that a discrete random variable takes a particular value.
+
+It is represented by:
+
+$$
+P(X=x)
+$$
+
+**Example:**
+
+A fair coin is tossed twice. Find the probability distribution of the number of heads.
+
+**Solution:**
+
+Possible outcomes:
+
+$$
+S=\{HH,HT,TH,TT\}
+$$
+
+Let \(X\) be the number of heads.
+
+| Outcome | Number of Heads (X) |
+|---|---:|
+| HH | 2 |
+| HT | 1 |
+| TH | 1 |
+| TT | 0 |
+
+The probability distribution is:
+
+| X | P(X) |
+|---:|---:|
+| 0 | 1/4 |
+| 1 | 2/4 |
+| 2 | 1/4 |
+
+Checking the total probability:
+
+$$
+\sum P(X)=\frac14+\frac24+\frac14
+$$
+
+$$
+=1
+$$
+
+Therefore, the probability distribution is valid.
+
+## 6. Probability Density Function (PDF)
+
+A Probability Density Function (PDF) describes the probability distribution of a continuous random variable.
+
+It is represented by:
+
+$$
+f(x)
+$$
+
+For a continuous random variable, the probability of a particular exact value is zero.
+
+$$
+P(X=a)=0
+$$
+
+The probability that a random variable lies between two values \(a\) and \(b\) is calculated using integration.
+
+$$
+P(a\leq X\leq b)=\int_a^b f(x)\,dx
+$$
+
+A valid PDF must satisfy two conditions:
+
+**Condition 1:**
+
+$$
+f(x)\geq 0
+$$
+
+**Condition 2:**
+
+The total area under the PDF curve must be equal to 1.
+
+$$
+\int_{-\infty}^{\infty}f(x)\,dx=1
+$$
+
+## 7. Cumulative Distribution Function (CDF)
+
+A Cumulative Distribution Function (CDF) gives the probability that a random variable \(X\) takes a value less than or equal to a particular value \(x\).
+
+It is represented by:
+
+$$
+F(x)=P(X\leq x)
+$$
+
+For a discrete random variable:
+
+$$
+F(x)=\sum_{t\leq x}P(X=t)
+$$
+
+For a continuous random variable:
+
+$$
+F(x)=\int_{-\infty}^{x}f(t)\,dt
+$$
+
+**Example:**
+
+Suppose a random variable has the following probability distribution:
+
+| X | P(X) |
+|---:|---:|
+| 1 | 0.2 |
+| 2 | 0.3 |
+| 3 | 0.5 |
+
+Find the CDF values.
+
+**Solution:**
+
+For \(X=1\):
+
+$$
+F(1)=P(X\leq1)=0.2
+$$
+
+For \(X=2\):
+
+$$
+F(2)=P(X\leq2)
+$$
+
+$$
+=0.2+0.3=0.5
+$$
+
+For \(X=3\):
+
+$$
+F(3)=P(X\leq3)
+$$
+
+$$
+=0.2+0.3+0.5=1
+$$
+
+Therefore:
+
+| X | F(X) |
+|---:|---:|
+| 1 | 0.2 |
+| 2 | 0.5 |
+| 3 | 1.0 |
+
+## 8. Expected Value (Mean)
+
+The expected value is the average or long-run mean value of a random variable.
+
+It is represented by:
+
+$$
+E(X)
+$$
+
+For a discrete random variable:
+
+$$
+E(X)=\sum_x xP(X=x)
+$$
+
+Where:
+
+- \(x\) = Possible value of the random variable.
+- \(P(X=x)\) = Probability of that value.
+
+**Example:**
+
+Suppose the probability distribution is:
+
+| X | P(X) |
+|---:|---:|
+| 1 | 0.2 |
+| 2 | 0.3 |
+| 3 | 0.5 |
+
+Find the expected value.
+
+**Solution:**
+
+$$
+E(X)=\sum_x xP(X=x)
+$$
+
+$$
+=(1\times0.2)+(2\times0.3)+(3\times0.5)
+$$
+
+$$
+=0.2+0.6+1.5
+$$
+
+$$
+\boxed{E(X)=2.3}
+$$
+
+Therefore, the expected value is 2.3.
+
+## 9. Variance of a Random Variable
+
+Variance measures how far the values of a random variable are spread around its mean.
+
+It is represented by:
+
+$$
+Var(X)
+$$
+
+The formula is:
+
+$$
+Var(X)=E[(X-\mu)^2]
+$$
+
+Another commonly used formula is:
+
+$$
+Var(X)=E(X^2)-[E(X)]^2
+$$
+
+Where:
+
+- \(E(X^2)\) = Expected value of the square of X.
+- \(E(X)\) = Mean or expected value.
+- \(\mu\) = Population mean.
+
+**Example:**
+
+Using the previous probability distribution:
+
+| X | P(X) |
+|---:|---:|
+| 1 | 0.2 |
+| 2 | 0.3 |
+| 3 | 0.5 |
+
+We already calculated:
+
+$$
+E(X)=2.3
+$$
+
+First, calculate \(E(X^2)\).
+
+$$
+E(X^2)=\sum_x x^2P(X=x)
+$$
+
+$$
+=(1^2\times0.2)+(2^2\times0.3)+(3^2\times0.5)
+$$
+
+$$
+=0.2+1.2+4.5
+$$
+
+$$
+=5.9
+$$
+
+Now, calculate variance.
+
+$$
+Var(X)=E(X^2)-[E(X)]^2
+$$
+
+$$
+=5.9-(2.3)^2
+$$
+
+$$
+=5.9-5.29
+$$
+
+$$
+\boxed{Var(X)=0.61}
+$$
+
+## 10. Standard Deviation
+
+Standard deviation measures the spread of values around the mean. It is the square root of variance.
+
+The formula is:
+
+$$
+\sigma=\sqrt{Var(X)}
+$$
+
+Using the previous example:
+
+$$
+\sigma=\sqrt{0.61}
+$$
+
+$$
+\boxed{\sigma\approx0.781}
+$$
+
+## 11. Important Formulas
+
+**Probability Mass Function:**
+
+$$
+P(X=x)
+$$
+
+**Probability Density Function:**
+
+$$
+P(a\leq X\leq b)=\int_a^b f(x)\,dx
+$$
+
+**Cumulative Distribution Function:**
+
+$$
+F(x)=P(X\leq x)
+$$
+
+**Expected Value:**
+
+$$
+E(X)=\sum_x xP(X=x)
+$$
+
+**Variance:**
+
+$$
+Var(X)=E(X^2)-[E(X)]^2
+$$
+
+**Standard Deviation:**
+
+$$
+\sigma=\sqrt{Var(X)}
+$$
+# Lecture 14: Probability Distributions
+
+## 1. Introduction
+
+A Probability Distribution describes how the probabilities of different possible outcomes of a random variable are distributed.
+
+It tells us how likely each value of a random variable is to occur.
+
+Probability distributions are important in statistics, probability theory, and Machine Learning because they help us understand uncertainty and analyze data.
+
+## 2. Random Variable
+
+A random variable is a variable whose value depends on the outcome of a random experiment.
+
+It is usually represented by a capital letter such as \(X\).
+
+**Example:**
+
+When a coin is tossed, the possible outcomes are:
+
+$$
+S=\{H,T\}
+$$
+
+Let,
+
+$$
+X=
+\begin{cases}
+1 & \text{if Head occurs}\\
+0 & \text{if Tail occurs}
+\end{cases}
+$$
+
+Here, \(X\) is a random variable because its value depends on the outcome of the coin toss.
+
+## 3. Types of Random Variables
+
+There are two main types of random variables.
+
+### 3.1 Discrete Random Variable
+
+A discrete random variable takes countable values.
+
+**Examples:**
+
+- Number of students in a classroom.
+- Number of heads in three coin tosses.
+- Number of defective products in a batch.
+- Number of customers visiting a shop.
+
+For example, when a coin is tossed three times, the number of heads can be:
+
+$$
+X=\{0,1,2,3\}
+$$
+
+### 3.2 Continuous Random Variable
+
+A continuous random variable can take any value within a given interval.
+
+**Examples:**
+
+- Height of a person.
+- Weight of a student.
+- Temperature of a city.
+- Time required to complete a task.
+
+For example, a person's height may be 160.5 cm, 160.55 cm, or 160.555 cm.
+
+## 4. Probability Distribution
+
+A probability distribution is a mathematical function that describes the possible values of a random variable and their corresponding probabilities.
+
+For a discrete random variable, the probability distribution must satisfy two conditions:
+
+**Condition 1:**
+
+Every probability must be between 0 and 1.
+
+$$
+0\leq P(X=x)\leq 1
+$$
+
+**Condition 2:**
+
+The sum of all probabilities must be equal to 1.
+
+$$
+\sum_x P(X=x)=1
+$$
+
+## 5. Probability Mass Function (PMF)
+
+A Probability Mass Function (PMF) gives the probability that a discrete random variable takes a particular value.
+
+It is represented by:
+
+$$
+P(X=x)
+$$
+
+**Example:**
+
+A fair coin is tossed twice. Find the probability distribution of the number of heads.
+
+**Solution:**
+
+Possible outcomes:
+
+$$
+S=\{HH,HT,TH,TT\}
+$$
+
+Let \(X\) be the number of heads.
+
+| Outcome | Number of Heads (X) |
+|---|---:|
+| HH | 2 |
+| HT | 1 |
+| TH | 1 |
+| TT | 0 |
+
+The probability distribution is:
+
+| X | P(X) |
+|---:|---:|
+| 0 | 1/4 |
+| 1 | 2/4 |
+| 2 | 1/4 |
+
+Checking the total probability:
+
+$$
+\sum P(X)=\frac14+\frac24+\frac14
+$$
+
+$$
+=1
+$$
+
+Therefore, the probability distribution is valid.
+
+## 6. Probability Density Function (PDF)
+
+A Probability Density Function (PDF) describes the probability distribution of a continuous random variable.
+
+It is represented by:
+
+$$
+f(x)
+$$
+
+For a continuous random variable, the probability of a particular exact value is zero.
+
+$$
+P(X=a)=0
+$$
+
+The probability that a random variable lies between two values \(a\) and \(b\) is calculated using integration.
+
+$$
+P(a\leq X\leq b)=\int_a^b f(x)\,dx
+$$
+
+A valid PDF must satisfy two conditions:
+
+**Condition 1:**
+
+$$
+f(x)\geq 0
+$$
+
+**Condition 2:**
+
+The total area under the PDF curve must be equal to 1.
+
+$$
+\int_{-\infty}^{\infty}f(x)\,dx=1
+$$
+
+## 7. Cumulative Distribution Function (CDF)
+
+A Cumulative Distribution Function (CDF) gives the probability that a random variable \(X\) takes a value less than or equal to a particular value \(x\).
+
+It is represented by:
+
+$$
+F(x)=P(X\leq x)
+$$
+
+For a discrete random variable:
+
+$$
+F(x)=\sum_{t\leq x}P(X=t)
+$$
+
+For a continuous random variable:
+
+$$
+F(x)=\int_{-\infty}^{x}f(t)\,dt
+$$
+
+**Example:**
+
+Suppose a random variable has the following probability distribution:
+
+| X | P(X) |
+|---:|---:|
+| 1 | 0.2 |
+| 2 | 0.3 |
+| 3 | 0.5 |
+
+Find the CDF values.
+
+**Solution:**
+
+For \(X=1\):
+
+$$
+F(1)=P(X\leq1)=0.2
+$$
+
+For \(X=2\):
+
+$$
+F(2)=P(X\leq2)
+$$
+
+$$
+=0.2+0.3=0.5
+$$
+
+For \(X=3\):
+
+$$
+F(3)=P(X\leq3)
+$$
+
+$$
+=0.2+0.3+0.5=1
+$$
+
+Therefore:
+
+| X | F(X) |
+|---:|---:|
+| 1 | 0.2 |
+| 2 | 0.5 |
+| 3 | 1.0 |
+
+## 8. Expected Value (Mean)
+
+The expected value is the average or long-run mean value of a random variable.
+
+It is represented by:
+
+$$
+E(X)
+$$
+
+For a discrete random variable:
+
+$$
+E(X)=\sum_x xP(X=x)
+$$
+
+Where:
+
+- \(x\) = Possible value of the random variable.
+- \(P(X=x)\) = Probability of that value.
+
+**Example:**
+
+Suppose the probability distribution is:
+
+| X | P(X) |
+|---:|---:|
+| 1 | 0.2 |
+| 2 | 0.3 |
+| 3 | 0.5 |
+
+Find the expected value.
+
+**Solution:**
+
+$$
+E(X)=\sum_x xP(X=x)
+$$
+
+$$
+=(1\times0.2)+(2\times0.3)+(3\times0.5)
+$$
+
+$$
+=0.2+0.6+1.5
+$$
+
+$$
+\boxed{E(X)=2.3}
+$$
+
+Therefore, the expected value is 2.3.
+
+## 9. Variance of a Random Variable
+
+Variance measures how far the values of a random variable are spread around its mean.
+
+It is represented by:
+
+$$
+Var(X)
+$$
+
+The formula is:
+
+$$
+Var(X)=E[(X-\mu)^2]
+$$
+
+Another commonly used formula is:
+
+$$
+Var(X)=E(X^2)-[E(X)]^2
+$$
+
+Where:
+
+- \(E(X^2)\) = Expected value of the square of X.
+- \(E(X)\) = Mean or expected value.
+- \(\mu\) = Population mean.
+
+**Example:**
+
+Using the previous probability distribution:
+
+| X | P(X) |
+|---:|---:|
+| 1 | 0.2 |
+| 2 | 0.3 |
+| 3 | 0.5 |
+
+We already calculated:
+
+$$
+E(X)=2.3
+$$
+
+First, calculate \(E(X^2)\).
+
+$$
+E(X^2)=\sum_x x^2P(X=x)
+$$
+
+$$
+=(1^2\times0.2)+(2^2\times0.3)+(3^2\times0.5)
+$$
+
+$$
+=0.2+1.2+4.5
+$$
+
+$$
+=5.9
+$$
+
+Now, calculate variance.
+
+$$
+Var(X)=E(X^2)-[E(X)]^2
+$$
+
+$$
+=5.9-(2.3)^2
+$$
+
+$$
+=5.9-5.29
+$$
+
+$$
+\boxed{Var(X)=0.61}
+$$
+
+## 10. Standard Deviation
+
+Standard deviation measures the spread of values around the mean. It is the square root of variance.
+
+The formula is:
+
+$$
+\sigma=\sqrt{Var(X)}
+$$
+
+Using the previous example:
+
+$$
+\sigma=\sqrt{0.61}
+$$
+
+$$
+\boxed{\sigma\approx0.781}
+$$
+
+## 11. Important Formulas
+
+**Probability Mass Function:**
+
+$$
+P(X=x)
+$$
+
+**Probability Density Function:**
+
+$$
+P(a\leq X\leq b)=\int_a^b f(x)\,dx
+$$
+
+**Cumulative Distribution Function:**
+
+$$
+F(x)=P(X\leq x)
+$$
+
+**Expected Value:**
+
+$$
+E(X)=\sum_x xP(X=x)
+$$
+
+**Variance:**
+
+$$
+Var(X)=E(X^2)-[E(X)]^2
+$$
+
+**Standard Deviation:**
+
+$$
+\sigma=\sqrt{Var(X)}
+$$
+
+---
+
